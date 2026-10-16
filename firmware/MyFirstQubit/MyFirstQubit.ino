@@ -47,7 +47,10 @@ float phaseFor(int which) {
 constexpr uint16_t COLOR_HAND = 0xFBC7;
 constexpr uint16_t COLOR_LABEL_BG = GC9A01A_BLACK;
 constexpr int SCREEN_SIZE = 240;
-constexpr int ANIMATION_STEPS = 8;
+// Faster SPI and shorter transitions reduce full-frame transfer time.
+// For unstable breadboard wiring, lower SPI_HZ to 20000000.
+constexpr uint32_t SPI_HZ = 40000000;
+constexpr int ANIMATION_STEPS = 6;
 GFXcanvas16 frame(SCREEN_SIZE, SCREEN_SIZE); // 115200 bytes; ESP32-S3 N8R8
 
 float shownP0 = 1.0f;
@@ -120,7 +123,13 @@ void showState() {
     return;
   }
 
-  int steps=hasShownFrame?ANIMATION_STEPS:1;
+  // Skip display transfers for gates that leave the picture unchanged.
+  bool visiblyChanged = !hasShownFrame ||
+      fabsf(p0-shownP0)>0.0001f ||
+      (p0>QUBIT_EPSILON && p1>QUBIT_EPSILON &&
+       fabsf(shortestAngle(shownPhase,destinationPhase))>0.0001f);
+  int steps = !hasShownFrame ? 1 : (visiblyChanged ? ANIMATION_STEPS : 0);
+  unsigned long drawStart = millis();
   for(int i=1;i<=steps;i++) {
     float t=smoothStep((float)i/(float)steps);
     float intermediateP0=shownP0+(p0-shownP0)*t;
@@ -131,6 +140,7 @@ void showState() {
     digitalWrite(PIN_CS_0,HIGH);
     renderDisplay(lcd1,1,1.0f-intermediateP0,intermediatePhase);
   }
+  if(steps>0) Serial.printf("Display update: %lu ms (%d frames)\n", millis()-drawStart, steps);
   shownP0=p0;
   shownPhase=destinationPhase;
   hasShownFrame=true;
@@ -186,8 +196,8 @@ void setup() {
   digitalWrite(PIN_CS_0,HIGH);
   digitalWrite(PIN_CS_1,HIGH);
   SPI.begin(PIN_SCK,-1,PIN_MOSI,PIN_CS_0);
-  lcd0.begin(10000000);
-  lcd1.begin(10000000);
+  lcd0.begin(SPI_HZ);
+  lcd1.begin(SPI_HZ);
   Serial.println("My First Qubit - serial controller");
   Serial.println("Type X, Y, Z, H, M, or R and press Send.");
   showState();
