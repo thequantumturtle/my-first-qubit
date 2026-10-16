@@ -41,6 +41,37 @@ float phaseFor(int which) {
   return atan2f(beta.im,beta.re)-atan2f(alpha.im,alpha.re);
 }
 
+// Warm orange contrasts with the cyan fill; black label panel retains
+// contrast regardless of probability. Colors are RGB565.
+constexpr uint16_t COLOR_HAND = 0xFD20;
+constexpr uint16_t COLOR_LABEL_BG = GC9A01A_BLACK;
+
+void drawThickHand(Adafruit_GC9A01A &lcd, int cx, int cy,
+                   float angle, int length) {
+  const int halfWidth = 4;
+  float px = -sinf(angle), py = cosf(angle);
+  int x1 = cx + (int)lroundf(px * halfWidth);
+  int y1 = cy + (int)lroundf(py * halfWidth);
+  int x2 = cx - (int)lroundf(px * halfWidth);
+  int y2 = cy - (int)lroundf(py * halfWidth);
+  int ex = cx + (int)lroundf(length * cosf(angle));
+  int ey = cy + (int)lroundf(length * sinf(angle));
+  lcd.fillTriangle(x1, y1, x2, y2, ex, ey, COLOR_HAND);
+  lcd.fillCircle(cx, cy, 4, GC9A01A_WHITE);
+  lcd.fillCircle(ex, ey, 2, COLOR_HAND);
+}
+
+void drawStateLabel(Adafruit_GC9A01A &lcd, int which) {
+  // Redraw last so it remains readable atop a fully filled probability disk.
+  const int x = 93, y = 195, w = 54, h = 28;
+  lcd.fillRoundRect(x, y, w, h, 6, COLOR_LABEL_BG);
+  lcd.drawRoundRect(x, y, w, h, 6, GC9A01A_WHITE);
+  lcd.setTextSize(2);
+  lcd.setTextColor(GC9A01A_WHITE, COLOR_LABEL_BG);
+  lcd.setCursor(x + 3, y + 6);
+  lcd.print(which == 0 ? "|0>" : "|1>");
+}
+
 void drawAmplitude(Adafruit_GC9A01A &lcd,int which) {
   float p=fminf(1.0f,fmaxf(0.0f,which==0?probability(alpha):probability(beta)));
   const int cx=120,cy=120,outerR=106;
@@ -51,15 +82,9 @@ void drawAmplitude(Adafruit_GC9A01A &lcd,int which) {
     lcd.fillCircle(cx,cy,radius,GC9A01A_CYAN);
     float angle=phaseFor(which)-PI_F/2.0f;
     int handR=radius>9?radius-5:radius;
-    int x=cx+(int)lroundf(handR*cosf(angle));
-    int y=cy+(int)lroundf(handR*sinf(angle));
-    lcd.drawLine(cx,cy,x,y,GC9A01A_YELLOW);
-    lcd.fillCircle(cx,cy,3,GC9A01A_YELLOW);
+    drawThickHand(lcd,cx,cy,angle,handR);
   }
-  lcd.setTextSize(2);
-  lcd.setTextColor(GC9A01A_WHITE);
-  lcd.setCursor(92,207);
-  lcd.print(which==0?"|0>":"|1>");
+  drawStateLabel(lcd,which);
 }
 
 void showState() {
