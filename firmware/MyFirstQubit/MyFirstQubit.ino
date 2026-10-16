@@ -41,61 +41,103 @@ float phaseFor(int which) {
   return atan2f(beta.im,beta.re)-atan2f(alpha.im,alpha.re);
 }
 
-// Warm orange contrasts with the cyan fill; black label panel retains
-// contrast regardless of probability. Colors are RGB565.
-constexpr uint16_t COLOR_HAND = 0xFD20;
+// V0.2 display: cheerful coral orange (#FF783C, RGB565) and a
+// constant-width phase hand. One offscreen framebuffer avoids the
+// black-screen wipes caused by drawing directly to the LCD.
+constexpr uint16_t COLOR_HAND = 0xFBC7;
 constexpr uint16_t COLOR_LABEL_BG = GC9A01A_BLACK;
+constexpr int SCREEN_SIZE = 240;
+constexpr int ANIMATION_STEPS = 8;
+GFXcanvas16 frame(SCREEN_SIZE, SCREEN_SIZE); // 115200 bytes; ESP32-S3 N8R8
 
-void drawThickHand(Adafruit_GC9A01A &lcd, int cx, int cy,
-                   float angle, int length) {
-  const int halfWidth = 4;
-  float px = -sinf(angle), py = cosf(angle);
-  int x1 = cx + (int)lroundf(px * halfWidth);
-  int y1 = cy + (int)lroundf(py * halfWidth);
-  int x2 = cx - (int)lroundf(px * halfWidth);
-  int y2 = cy - (int)lroundf(py * halfWidth);
-  int ex = cx + (int)lroundf(length * cosf(angle));
-  int ey = cy + (int)lroundf(length * sinf(angle));
-  lcd.fillTriangle(x1, y1, x2, y2, ex, ey, COLOR_HAND);
-  lcd.fillCircle(cx, cy, 4, GC9A01A_WHITE);
-  lcd.fillCircle(ex, ey, 2, COLOR_HAND);
+float shownP0 = 1.0f;
+float shownPhase = 0.0f;
+bool hasShownFrame = false;
+
+float smoothStep(float t) { return t*t*(3.0f-2.0f*t); }
+float shortestAngle(float from, float to) {
+  float diff = remainderf(to-from, 2.0f*PI_F);
+  return diff;
 }
 
-void drawStateLabel(Adafruit_GC9A01A &lcd, int which) {
-  // Redraw last so it remains readable atop a fully filled probability disk.
-  const int x = 93, y = 195, w = 54, h = 28;
-  lcd.fillRoundRect(x, y, w, h, 6, COLOR_LABEL_BG);
-  lcd.drawRoundRect(x, y, w, h, 6, GC9A01A_WHITE);
-  lcd.setTextSize(2);
-  lcd.setTextColor(GC9A01A_WHITE, COLOR_LABEL_BG);
-  lcd.setCursor(x + 3, y + 6);
-  lcd.print(which == 0 ? "|0>" : "|1>");
+void drawHand(GFXcanvas16 &canvas, int cx, int cy,
+              float angle, int length) {
+  const int halfWidth = 3;
+  float dx=cosf(angle),dy=sinf(angle);
+  float px=-dy,py=dx;
+  int ax=cx+(int)lroundf(px*halfWidth);
+  int ay=cy+(int)lroundf(py*halfWidth);
+  int bx=cx-(int)lroundf(px*halfWidth);
+  int by=cy-(int)lroundf(py*halfWidth);
+  int ex=cx+(int)lroundf(dx*length);
+  int ey=cy+(int)lroundf(dy*length);
+  int cx2=ex+(int)lroundf(px*halfWidth);
+  int cy2=ey+(int)lroundf(py*halfWidth);
+  int dx2=ex-(int)lroundf(px*halfWidth);
+  int dy2=ey-(int)lroundf(py*halfWidth);
+  // Two triangles form a constant-width rectangle.
+  canvas.fillTriangle(ax,ay,bx,by,cx2,cy2,COLOR_HAND);
+  canvas.fillTriangle(bx,by,cx2,cy2,dx2,dy2,COLOR_HAND);
+  canvas.fillCircle(cx,cy,4,GC9A01A_WHITE);
+  canvas.fillCircle(ex,ey,halfWidth,COLOR_HAND);
 }
 
-void drawAmplitude(Adafruit_GC9A01A &lcd,int which) {
-  float p=fminf(1.0f,fmaxf(0.0f,which==0?probability(alpha):probability(beta)));
+void drawLabel(GFXcanvas16 &canvas,int which) {
+  const int x=93,y=195,w=54,h=28;
+  canvas.fillRoundRect(x,y,w,h,6,COLOR_LABEL_BG);
+  canvas.drawRoundRect(x,y,w,h,6,GC9A01A_WHITE);
+  canvas.setTextSize(2);
+  canvas.setTextColor(GC9A01A_WHITE,COLOR_LABEL_BG);
+  canvas.setCursor(x+3,y+6);
+  canvas.print(which==0?"|0>":"|1>");
+}
+
+void renderDisplay(Adafruit_GC9A01A &lcd,int which,
+                   float p,float relativePhase) {
   const int cx=120,cy=120,outerR=106;
-  lcd.fillScreen(GC9A01A_BLACK);
-  lcd.drawCircle(cx,cy,110,GC9A01A_WHITE);
-  int radius=(int)lroundf(outerR*sqrtf(p)); // area proportional to probability
-  if (radius>0) {
-    lcd.fillCircle(cx,cy,radius,GC9A01A_CYAN);
-    float angle=phaseFor(which)-PI_F/2.0f;
-    int handR=radius>9?radius-5:radius;
-    drawThickHand(lcd,cx,cy,angle,handR);
+  frame.fillScreen(GC9A01A_BLACK);
+  frame.drawCircle(cx,cy,110,GC9A01A_WHITE);
+  int radius=(int)lroundf(outerR*sqrtf(fminf(1.0f,fmaxf(0.0f,p))));
+  if(radius>0) {
+    frame.fillCircle(cx,cy,radius,GC9A01A_CYAN);
+    // Zero phase always points up; |1> shows the relative phase.
+    float angle=(which==0?0.0f:relativePhase)-PI_F/2.0f;
+    int length=radius>9?radius-5:radius;
+    drawHand(frame,cx,cy,angle,length);
   }
-  drawStateLabel(lcd,which);
+  drawLabel(frame,which);
+  lcd.drawRGBBitmap(0,0,frame.getBuffer(),SCREEN_SIZE,SCREEN_SIZE);
 }
 
 void showState() {
-  digitalWrite(PIN_CS_1,HIGH);
-  drawAmplitude(lcd0,0);
-  digitalWrite(PIN_CS_0,HIGH);
-  drawAmplitude(lcd1,1);
   float p0=probability(alpha),p1=probability(beta);
+  float newPhase=phaseFor(1);
+  bool phaseDefined=p0>QUBIT_EPSILON && p1>QUBIT_EPSILON;
+  // Preserve the last meaningful phase when an amplitude vanishes.
+  float destinationPhase=phaseDefined?newPhase:shownPhase;
+  if(!frame.getBuffer()) {
+    Serial.println("ERROR: Display framebuffer allocation failed");
+    return;
+  }
+
+  int steps=hasShownFrame?ANIMATION_STEPS:1;
+  for(int i=1;i<=steps;i++) {
+    float t=smoothStep((float)i/(float)steps);
+    float intermediateP0=shownP0+(p0-shownP0)*t;
+    float intermediatePhase=shownPhase+
+      shortestAngle(shownPhase,destinationPhase)*t;
+    digitalWrite(PIN_CS_1,HIGH);
+    renderDisplay(lcd0,0,intermediateP0,0.0f);
+    digitalWrite(PIN_CS_0,HIGH);
+    renderDisplay(lcd1,1,1.0f-intermediateP0,intermediatePhase);
+  }
+  shownP0=p0;
+  shownPhase=destinationPhase;
+  hasShownFrame=true;
+
   Serial.printf("P(0)=%.1f%% P(1)=%.1f%%",p0*100,p1*100);
-  if (p0>QUBIT_EPSILON && p1>QUBIT_EPSILON) {
-    float deg=phaseFor(1)*180.0f/PI_F;
+  if(phaseDefined) {
+    float deg=newPhase*180.0f/PI_F;
     while(deg<0) deg+=360.0f;
     while(deg>=360) deg-=360.0f;
     Serial.printf(" relative phase=%.1f deg",deg);
