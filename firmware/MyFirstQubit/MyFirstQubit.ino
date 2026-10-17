@@ -40,15 +40,25 @@ float phaseFor(int which) {
   return probability(a)>QUBIT_EPSILON ? atan2f(a.im,a.re) : 0.0f;
 }
 
-// Warm, wooden-board palette, aligned with the browser simulator.
-// RGB565 approximations of the sRGB colors below.
-constexpr uint16_t COLOR_BACKGROUND = 0xFFBD; // #FCF6E8
-constexpr uint16_t COLOR_EMPTY = 0xE6B7; // #E2D6BE
-constexpr uint16_t COLOR_OUTLINE = 0x93CB; // #927B5B
-constexpr uint16_t COLOR_ZERO = 0x5CFA; // #5D9ED0
-constexpr uint16_t COLOR_ONE = 0xECCC; // #E99B66
-constexpr uint16_t COLOR_HAND = 0x41A4; // #443726
-constexpr uint16_t COLOR_LABEL_BG = COLOR_BACKGROUND;
+// Display-only palettes. A palette change never changes the amplitudes.
+struct Palette {
+  const char *name;
+  uint16_t background,empty,outline,zero,one,hand;
+};
+constexpr uint16_t rgb565(uint32_t rgb) {
+  return ((rgb>>8)&0xF800)|((rgb>>5)&0x07E0)|((rgb>>3)&0x001F);
+}
+constexpr Palette PALETTES[] = {
+  {"Woodland",rgb565(0xFCF6E8),rgb565(0xE2D6BE),rgb565(0x927B5B),
+              rgb565(0x5D9ED0),rgb565(0xE99B66),rgb565(0x443726)},
+  {"Garden",  rgb565(0xF7F3E8),rgb565(0xDEDCCB),rgb565(0x7C846B),
+              rgb565(0x82A878),rgb565(0xCE9494),rgb565(0x303D2F)},
+  {"Night",   rgb565(0x172638),rgb565(0x2B3D50),rgb565(0x8998A5),
+              rgb565(0x80B9D8),rgb565(0xD9B56D),rgb565(0x172638)}
+};
+constexpr unsigned PALETTE_COUNT=sizeof(PALETTES)/sizeof(PALETTES[0]);
+unsigned paletteIndex=0;
+const Palette &palette() { return PALETTES[paletteIndex]; }
 constexpr int SCREEN_SIZE = 240;
 // Faster SPI and shorter transitions reduce full-frame transfer time.
 // For unstable breadboard wiring, lower SPI_HZ to 20000000.
@@ -81,18 +91,18 @@ void drawHand(GFXcanvas16 &canvas, int cx, int cy,
   int dx2=ex-(int)lroundf(px*halfWidth);
   int dy2=ey-(int)lroundf(py*halfWidth);
   // Two triangles form a constant-width rectangle.
-  canvas.fillTriangle(ax,ay,bx,by,cx2,cy2,COLOR_HAND);
-  canvas.fillTriangle(bx,by,cx2,cy2,dx2,dy2,COLOR_HAND);
-  canvas.fillCircle(cx,cy,4,COLOR_HAND);
-  canvas.fillCircle(ex,ey,halfWidth,COLOR_HAND);
+  canvas.fillTriangle(ax,ay,bx,by,cx2,cy2,palette().hand);
+  canvas.fillTriangle(bx,by,cx2,cy2,dx2,dy2,palette().hand);
+  canvas.fillCircle(cx,cy,4,palette().hand);
+  canvas.fillCircle(ex,ey,halfWidth,palette().hand);
 }
 
 void drawLabel(GFXcanvas16 &canvas,int which) {
   const int x=93,y=195,w=54,h=28;
-  canvas.fillRoundRect(x,y,w,h,6,COLOR_LABEL_BG);
-  canvas.drawRoundRect(x,y,w,h,6,COLOR_OUTLINE);
+  canvas.fillRoundRect(x,y,w,h,6,palette().background);
+  canvas.drawRoundRect(x,y,w,h,6,palette().outline);
   canvas.setTextSize(2);
-  canvas.setTextColor(COLOR_HAND,COLOR_LABEL_BG);
+  canvas.setTextColor(paletteIndex==2?palette().outline:palette().hand,palette().background);
   canvas.setCursor(x+3,y+6);
   canvas.print(which==0?"|0>":"|1>");
 }
@@ -100,12 +110,12 @@ void drawLabel(GFXcanvas16 &canvas,int which) {
 void renderDisplay(Adafruit_GC9A01A &lcd,int which,
                    float p,float amplitudePhase) {
   const int cx=120,cy=120,outerR=106;
-  frame.fillScreen(COLOR_BACKGROUND);
-  frame.fillCircle(cx,cy,outerR,COLOR_EMPTY);
-  frame.drawCircle(cx,cy,110,COLOR_OUTLINE);
+  frame.fillScreen(palette().background);
+  frame.fillCircle(cx,cy,outerR,palette().empty);
+  frame.drawCircle(cx,cy,110,palette().outline);
   int radius=(int)lroundf(outerR*sqrtf(fminf(1.0f,fmaxf(0.0f,p))));
   if(radius>0) {
-    frame.fillCircle(cx,cy,radius,which==0?COLOR_ZERO:COLOR_ONE);
+    frame.fillCircle(cx,cy,radius,which==0?palette().zero:palette().one);
     // Positive phase turns clockwise from up, matching the browser.
     float angle=amplitudePhase-PI_F/2.0f;
     int length=radius>9?radius-5:radius;
@@ -201,6 +211,13 @@ void animateState(const Amp &a,const Amp &b,const Amp &targetA,
   Serial.printf("Animation: %lu ms (%d samples)\n",millis()-start,frames);
 }
 void applyCommand(char cmd) {
+  if(cmd=='C') {
+    paletteIndex=(paletteIndex+1)%PALETTE_COUNT;
+    hasShownFrame=false; // Force both LCDs to repaint, even at the same state.
+    Serial.printf("Palette: %s\n",palette().name);
+    showState();
+    return;
+  }
   Amp a=alpha,b=beta,targetA=a,targetB=b;
   bool unitary=cmd=='X'||cmd=='Y'||cmd=='Z'||cmd=='H';
   if(unitary) gateResult(cmd,a,b,targetA,targetB);
@@ -215,7 +232,7 @@ void applyCommand(char cmd) {
     targetB=zero?Amp{0,0}:collapsed;
     Serial.printf("Measurement result: %d\n",zero?0:1);
   } else {
-    Serial.println("Commands: X Y Z H M (measure) R (reset)");
+    Serial.println("Commands: X Y Z H M (measure) R (reset) C (colors)");
     return;
   }
   animateState(a,b,targetA,targetB,unitary,unitary?720:460);
@@ -235,7 +252,7 @@ void setup() {
   lcd0.begin(SPI_HZ);
   lcd1.begin(SPI_HZ);
   Serial.println("My First Qubit - browser-matched gate animation");
-  Serial.println("Type X, Y, Z, H, M, or R and press Send.");
+  Serial.println("Type X, Y, Z, H, M, R, or C (colors) and press Send.");
   showState();
 }
 
