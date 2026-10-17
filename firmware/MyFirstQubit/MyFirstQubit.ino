@@ -33,12 +33,11 @@ void normalizeState() {
   beta.re/=norm; beta.im/=norm;
 }
 
-// Gauge: alpha phase is zero whenever both amplitudes are nonzero.
-// No phase hand is drawn for a zero-probability amplitude.
+// Each hand shows its complex amplitude's phase, as in the simulator.
+// Phase is undefined for a zero amplitude; renderDisplay hides its hand.
 float phaseFor(int which) {
-  float p0=probability(alpha),p1=probability(beta);
-  if (which==0 || p0<QUBIT_EPSILON || p1<QUBIT_EPSILON) return 0.0f;
-  return atan2f(beta.im,beta.re)-atan2f(alpha.im,alpha.re);
+  const Amp &a = which == 0 ? alpha : beta;
+  return probability(a)>QUBIT_EPSILON ? atan2f(a.im,a.re) : 0.0f;
 }
 
 // V0.2 display: cheerful coral orange (#FF783C, RGB565) and a
@@ -50,14 +49,13 @@ constexpr int SCREEN_SIZE = 240;
 // Faster SPI and shorter transitions reduce full-frame transfer time.
 // For unstable breadboard wiring, lower SPI_HZ to 20000000.
 constexpr uint32_t SPI_HZ = 40000000;
-constexpr int ANIMATION_STEPS = 6;
+// Milestone 1: render exact endpoints before adding unitary animation.
 GFXcanvas16 frame(SCREEN_SIZE, SCREEN_SIZE); // 115200 bytes; ESP32-S3 N8R8
 
 float shownP0 = 1.0f;
-float shownPhase = 0.0f;
+float shownPhase0 = 0.0f, shownPhase1 = 0.0f;
 bool hasShownFrame = false;
 
-float smoothStep(float t) { return t*t*(3.0f-2.0f*t); }
 float shortestAngle(float from, float to) {
   float diff = remainderf(to-from, 2.0f*PI_F);
   return diff;
@@ -96,17 +94,17 @@ void drawLabel(GFXcanvas16 &canvas,int which) {
 }
 
 void renderDisplay(Adafruit_GC9A01A &lcd,int which,
-                   float p,float relativePhase) {
+                   float p,float amplitudePhase) {
   const int cx=120,cy=120,outerR=106;
   frame.fillScreen(GC9A01A_BLACK);
   frame.drawCircle(cx,cy,110,GC9A01A_WHITE);
   int radius=(int)lroundf(outerR*sqrtf(fminf(1.0f,fmaxf(0.0f,p))));
   if(radius>0) {
     frame.fillCircle(cx,cy,radius,GC9A01A_CYAN);
-    // Zero phase always points up; |1> shows the relative phase.
-    float angle=(which==0?0.0f:relativePhase)-PI_F/2.0f;
+    // Positive phase turns clockwise from up, matching the browser.
+    float angle=amplitudePhase-PI_F/2.0f;
     int length=radius>9?radius-5:radius;
-    drawHand(frame,cx,cy,angle,length);
+    if(p>QUBIT_EPSILON) drawHand(frame,cx,cy,angle,length);
   }
   drawLabel(frame,which);
   lcd.drawRGBBitmap(0,0,frame.getBuffer(),SCREEN_SIZE,SCREEN_SIZE);
@@ -114,35 +112,28 @@ void renderDisplay(Adafruit_GC9A01A &lcd,int which,
 
 void showState() {
   float p0=probability(alpha),p1=probability(beta);
-  float newPhase=phaseFor(1);
+  float phase0=phaseFor(0),phase1=phaseFor(1);
+  float newPhase=phase1-phase0;
   bool phaseDefined=p0>QUBIT_EPSILON && p1>QUBIT_EPSILON;
-  // Preserve the last meaningful phase when an amplitude vanishes.
-  float destinationPhase=phaseDefined?newPhase:shownPhase;
   if(!frame.getBuffer()) {
     Serial.println("ERROR: Display framebuffer allocation failed");
     return;
   }
-
-  // Skip display transfers for gates that leave the picture unchanged.
   bool visiblyChanged = !hasShownFrame ||
       fabsf(p0-shownP0)>0.0001f ||
-      (p0>QUBIT_EPSILON && p1>QUBIT_EPSILON &&
-       fabsf(shortestAngle(shownPhase,destinationPhase))>0.0001f);
-  int steps = !hasShownFrame ? 1 : (visiblyChanged ? ANIMATION_STEPS : 0);
-  unsigned long drawStart = millis();
-  for(int i=1;i<=steps;i++) {
-    float t=smoothStep((float)i/(float)steps);
-    float intermediateP0=shownP0+(p0-shownP0)*t;
-    float intermediatePhase=shownPhase+
-      shortestAngle(shownPhase,destinationPhase)*t;
+      (p0>QUBIT_EPSILON && fabsf(shortestAngle(shownPhase0,phase0))>0.0001f) ||
+      (p1>QUBIT_EPSILON && fabsf(shortestAngle(shownPhase1,phase1))>0.0001f);
+  if(visiblyChanged) {
+    unsigned long drawStart=millis();
     digitalWrite(PIN_CS_1,HIGH);
-    renderDisplay(lcd0,0,intermediateP0,0.0f);
+    renderDisplay(lcd0,0,p0,phase0);
     digitalWrite(PIN_CS_0,HIGH);
-    renderDisplay(lcd1,1,1.0f-intermediateP0,intermediatePhase);
+    renderDisplay(lcd1,1,p1,phase1);
+    Serial.printf("Display update: %lu ms (1 frame pair)\n",millis()-drawStart);
   }
-  if(steps>0) Serial.printf("Display update: %lu ms (%d frames)\n", millis()-drawStart, steps);
   shownP0=p0;
-  shownPhase=destinationPhase;
+  shownPhase0=phase0;
+  shownPhase1=phase1;
   hasShownFrame=true;
 
   Serial.printf("P(0)=%.1f%% P(1)=%.1f%%",p0*100,p1*100);
@@ -173,8 +164,12 @@ void applyCommand(char cmd) {
       float p0=probability(alpha);
       float draw=(float)random(1000000)/1000000.0f;
       bool zero=draw<p0;
-      alpha=zero?Amp{1,0}:Amp{0,0};
-      beta=zero?Amp{0,0}:Amp{1,0};
+      // Preserve the surviving amplitude's phase during collapse.
+      Amp selected=zero?a:b;
+      float magnitude=sqrtf(probability(selected));
+      Amp collapsed={selected.re/magnitude,selected.im/magnitude};
+      alpha=zero?collapsed:Amp{0,0};
+      beta=zero?Amp{0,0}:collapsed;
       Serial.printf("Measurement result: %d\n",zero?0:1);
       break;
     }
@@ -198,7 +193,7 @@ void setup() {
   SPI.begin(PIN_SCK,-1,PIN_MOSI,PIN_CS_0);
   lcd0.begin(SPI_HZ);
   lcd1.begin(SPI_HZ);
-  Serial.println("My First Qubit - serial controller");
+  Serial.println("My First Qubit - amplitude phase milestone 1");
   Serial.println("Type X, Y, Z, H, M, or R and press Send.");
   showState();
 }
