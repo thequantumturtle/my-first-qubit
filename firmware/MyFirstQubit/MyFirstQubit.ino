@@ -17,7 +17,7 @@ struct Amp { float re; float im; };
 Amp alpha={1.0f,0.0f}, beta={0.0f,0.0f};
 constexpr float INV_SQRT2=0.70710678118f;
 constexpr float PI_F=3.14159265359f;
-constexpr float QUBIT_EPSILON=0.00001f;
+constexpr float QUBIT_EPSILON=1e-10f;
 
 float probability(const Amp &a) { return a.re*a.re+a.im*a.im; }
 Amp negate(const Amp &a) { return {-a.re,-a.im}; }
@@ -49,7 +49,7 @@ constexpr int SCREEN_SIZE = 240;
 // Faster SPI and shorter transitions reduce full-frame transfer time.
 // For unstable breadboard wiring, lower SPI_HZ to 20000000.
 constexpr uint32_t SPI_HZ = 40000000;
-// Milestone 1: render exact endpoints before adding unitary animation.
+// Browser reference: 720 ms gates, 460 ms measurement/reset.
 GFXcanvas16 frame(SCREEN_SIZE, SCREEN_SIZE); // 115200 bytes; ESP32-S3 N8R8
 
 float shownP0 = 1.0f;
@@ -110,7 +110,7 @@ void renderDisplay(Adafruit_GC9A01A &lcd,int which,
   lcd.drawRGBBitmap(0,0,frame.getBuffer(),SCREEN_SIZE,SCREEN_SIZE);
 }
 
-void showState() {
+void showState(bool report=true) {
   float p0=probability(alpha),p1=probability(beta);
   float phase0=phaseFor(0),phase1=phaseFor(1);
   float newPhase=phase1-phase0;
@@ -129,13 +129,14 @@ void showState() {
     renderDisplay(lcd0,0,p0,phase0);
     digitalWrite(PIN_CS_0,HIGH);
     renderDisplay(lcd1,1,p1,phase1);
-    Serial.printf("Display update: %lu ms (1 frame pair)\n",millis()-drawStart);
+    if(report) Serial.printf("Display update: %lu ms (1 frame pair)\n",millis()-drawStart);
   }
   shownP0=p0;
   shownPhase0=phase0;
   shownPhase1=phase1;
   hasShownFrame=true;
 
+  if(!report) return;
   Serial.printf("P(0)=%.1f%% P(1)=%.1f%%",p0*100,p1*100);
   if(phaseDefined) {
     float deg=newPhase*180.0f/PI_F;
@@ -148,36 +149,71 @@ void showState() {
   Serial.println();
 }
 
-void applyCommand(char cmd) {
-  Amp a=alpha,b=beta;
+Amp scaled(const Amp &a,float k) { return {a.re*k,a.im*k}; }
+Amp multiply(const Amp &a,const Amp &b) {
+  return {a.re*b.re-a.im*b.im,a.re*b.im+a.im*b.re};
+}
+void gateResult(char cmd,const Amp &a,const Amp &b,Amp &outA,Amp &outB) {
   switch(cmd) {
-    case 'X': alpha=b;beta=a;break;
-    case 'Y': alpha=timesMinusI(b);beta=timesI(a);break;
-    case 'Z': beta=negate(b);break;
-    case 'H':
-      alpha=plus(a,b);beta=minusAmp(a,b);
-      alpha.re*=INV_SQRT2;alpha.im*=INV_SQRT2;
-      beta.re*=INV_SQRT2;beta.im*=INV_SQRT2;
-      break;
-    case 'R': alpha={1,0};beta={0,0};break;
-    case 'M': {
-      float p0=probability(alpha);
-      float draw=(float)random(1000000)/1000000.0f;
-      bool zero=draw<p0;
-      // Preserve the surviving amplitude's phase during collapse.
-      Amp selected=zero?a:b;
-      float magnitude=sqrtf(probability(selected));
-      Amp collapsed={selected.re/magnitude,selected.im/magnitude};
-      alpha=zero?collapsed:Amp{0,0};
-      beta=zero?Amp{0,0}:collapsed;
-      Serial.printf("Measurement result: %d\n",zero?0:1);
-      break;
-    }
-    default:
-      Serial.println("Commands: X Y Z H M (measure) R (reset)");
-      return;
+    case 'X': outA=b;outB=a;break;
+    case 'Y': outA=timesMinusI(b);outB=timesI(a);break;
+    case 'Z': outA=a;outB=negate(b);break;
+    default: outA=scaled(plus(a,b),INV_SQRT2);
+             outB=scaled(minusAmp(a,b),INV_SQRT2);break;
   }
-  normalizeState();
+}
+// Same path as browser gateState:
+// exp(i*t/2) [cos(t/2) I - i*sin(t/2) G], t from 0 to pi.
+Amp gateSample(const Amp &initial,const Amp &transformed,float fraction) {
+  float half=PI_F*fraction/2.0f;
+  Amp factor={cosf(half),sinf(half)};
+  return multiply(factor,plus(scaled(initial,cosf(half)),
+                  timesMinusI(scaled(transformed,sinf(half)))));
+}
+void animateState(const Amp &a,const Amp &b,const Amp &targetA,
+                  const Amp &targetB,bool unitary,uint32_t duration) {
+  uint32_t start=millis();
+  int frames=0;
+  while(true) {
+    float fraction=fminf(1.0f,(float)(millis()-start)/(float)duration);
+    float eased=fraction*fraction*(3.0f-2.0f*fraction);
+    // Snap exactly to the gate result to avoid trigonometric residue.
+    if(fraction>=1.0f) { alpha=targetA;beta=targetB; }
+    else if(unitary) {
+      alpha=gateSample(a,targetA,eased);
+      beta=gateSample(b,targetB,eased);
+    } else {
+      // Measurement/reset: normalized visual interpolation, not a gate.
+      alpha=plus(scaled(a,1-eased),scaled(targetA,eased));
+      beta=plus(scaled(b,1-eased),scaled(targetB,eased));
+    }
+    normalizeState();
+    showState(false);
+    frames++;
+    if(fraction>=1.0f) break;
+    delay(1); // Yield even when consecutive frames are visually identical.
+  }
+  Serial.printf("Animation: %lu ms (%d samples)\n",millis()-start,frames);
+}
+void applyCommand(char cmd) {
+  Amp a=alpha,b=beta,targetA=a,targetB=b;
+  bool unitary=cmd=='X'||cmd=='Y'||cmd=='Z'||cmd=='H';
+  if(unitary) gateResult(cmd,a,b,targetA,targetB);
+  else if(cmd=='R') { targetA={1,0};targetB={0,0}; }
+  else if(cmd=='M') {
+    float draw=(float)random(1000000)/1000000.0f;
+    bool zero=draw<probability(a);
+    Amp selected=zero?a:b;
+    float magnitude=sqrtf(probability(selected));
+    Amp collapsed=scaled(selected,1.0f/magnitude);
+    targetA=zero?collapsed:Amp{0,0};
+    targetB=zero?Amp{0,0}:collapsed;
+    Serial.printf("Measurement result: %d\n",zero?0:1);
+  } else {
+    Serial.println("Commands: X Y Z H M (measure) R (reset)");
+    return;
+  }
+  animateState(a,b,targetA,targetB,unitary,unitary?720:460);
   Serial.printf("Applied %c. ",cmd);
   showState();
 }
@@ -193,7 +229,7 @@ void setup() {
   SPI.begin(PIN_SCK,-1,PIN_MOSI,PIN_CS_0);
   lcd0.begin(SPI_HZ);
   lcd1.begin(SPI_HZ);
-  Serial.println("My First Qubit - amplitude phase milestone 1");
+  Serial.println("My First Qubit - browser-matched gate animation");
   Serial.println("Type X, Y, Z, H, M, or R and press Send.");
   showState();
 }
