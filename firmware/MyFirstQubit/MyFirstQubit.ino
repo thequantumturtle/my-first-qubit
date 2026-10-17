@@ -58,6 +58,7 @@ constexpr Palette PALETTES[] = {
 };
 constexpr unsigned PALETTE_COUNT=sizeof(PALETTES)/sizeof(PALETTES[0]);
 unsigned paletteIndex=0;
+const Palette &palette(); // Explicit prototype after Palette for Arduino preprocessing.
 const Palette &palette() { return PALETTES[paletteIndex]; }
 constexpr int SCREEN_SIZE = 240;
 // Faster SPI and shorter transitions reduce full-frame transfer time.
