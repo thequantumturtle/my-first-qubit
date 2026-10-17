@@ -40,11 +40,15 @@ float phaseFor(int which) {
   return probability(a)>QUBIT_EPSILON ? atan2f(a.im,a.re) : 0.0f;
 }
 
-// V0.2 display: cheerful coral orange (#FF783C, RGB565) and a
-// constant-width phase hand. One offscreen framebuffer avoids the
-// black-screen wipes caused by drawing directly to the LCD.
-constexpr uint16_t COLOR_HAND = 0xFBC7;
-constexpr uint16_t COLOR_LABEL_BG = GC9A01A_BLACK;
+// Warm, wooden-board palette, aligned with the browser simulator.
+// RGB565 approximations of the sRGB colors below.
+constexpr uint16_t COLOR_BACKGROUND = 0xFFBD; // #FCF6E8
+constexpr uint16_t COLOR_EMPTY = 0xE6B7; // #E2D6BE
+constexpr uint16_t COLOR_OUTLINE = 0x93CB; // #927B5B
+constexpr uint16_t COLOR_ZERO = 0x5CFA; // #5D9ED0
+constexpr uint16_t COLOR_ONE = 0xECCC; // #E99B66
+constexpr uint16_t COLOR_HAND = 0x41A4; // #443726
+constexpr uint16_t COLOR_LABEL_BG = COLOR_BACKGROUND;
 constexpr int SCREEN_SIZE = 240;
 // Faster SPI and shorter transitions reduce full-frame transfer time.
 // For unstable breadboard wiring, lower SPI_HZ to 20000000.
@@ -79,16 +83,16 @@ void drawHand(GFXcanvas16 &canvas, int cx, int cy,
   // Two triangles form a constant-width rectangle.
   canvas.fillTriangle(ax,ay,bx,by,cx2,cy2,COLOR_HAND);
   canvas.fillTriangle(bx,by,cx2,cy2,dx2,dy2,COLOR_HAND);
-  canvas.fillCircle(cx,cy,4,GC9A01A_WHITE);
+  canvas.fillCircle(cx,cy,4,COLOR_HAND);
   canvas.fillCircle(ex,ey,halfWidth,COLOR_HAND);
 }
 
 void drawLabel(GFXcanvas16 &canvas,int which) {
   const int x=93,y=195,w=54,h=28;
   canvas.fillRoundRect(x,y,w,h,6,COLOR_LABEL_BG);
-  canvas.drawRoundRect(x,y,w,h,6,GC9A01A_WHITE);
+  canvas.drawRoundRect(x,y,w,h,6,COLOR_OUTLINE);
   canvas.setTextSize(2);
-  canvas.setTextColor(GC9A01A_WHITE,COLOR_LABEL_BG);
+  canvas.setTextColor(COLOR_HAND,COLOR_LABEL_BG);
   canvas.setCursor(x+3,y+6);
   canvas.print(which==0?"|0>":"|1>");
 }
@@ -96,11 +100,12 @@ void drawLabel(GFXcanvas16 &canvas,int which) {
 void renderDisplay(Adafruit_GC9A01A &lcd,int which,
                    float p,float amplitudePhase) {
   const int cx=120,cy=120,outerR=106;
-  frame.fillScreen(GC9A01A_BLACK);
-  frame.drawCircle(cx,cy,110,GC9A01A_WHITE);
+  frame.fillScreen(COLOR_BACKGROUND);
+  frame.fillCircle(cx,cy,outerR,COLOR_EMPTY);
+  frame.drawCircle(cx,cy,110,COLOR_OUTLINE);
   int radius=(int)lroundf(outerR*sqrtf(fminf(1.0f,fmaxf(0.0f,p))));
   if(radius>0) {
-    frame.fillCircle(cx,cy,radius,GC9A01A_CYAN);
+    frame.fillCircle(cx,cy,radius,which==0?COLOR_ZERO:COLOR_ONE);
     // Positive phase turns clockwise from up, matching the browser.
     float angle=amplitudePhase-PI_F/2.0f;
     int length=radius>9?radius-5:radius;
