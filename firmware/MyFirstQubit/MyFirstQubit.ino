@@ -9,6 +9,11 @@
 constexpr int PIN_SCK=12, PIN_MOSI=11, PIN_DC=10;
 constexpr int PIN_CS_0=13, PIN_CS_1=14;
 constexpr int PIN_RST_0=9, PIN_RST_1=8;
+// Normally-open H button between GPIO 4 and GND. No external resistor.
+constexpr int PIN_BUTTON_H=4;
+constexpr uint32_t BUTTON_DEBOUNCE_MS=30;
+bool buttonRaw=HIGH,buttonStable=HIGH;
+uint32_t buttonChangedAt=0;
 
 Adafruit_GC9A01A lcd0(PIN_CS_0, PIN_DC, PIN_RST_0);
 Adafruit_GC9A01A lcd1(PIN_CS_1, PIN_DC, PIN_RST_1);
@@ -241,10 +246,32 @@ void applyCommand(char cmd) {
   showState();
 }
 
+// Poll between animations. One H per stable press; holding does not repeat.
+// Presses entirely during an animation are ignored for this first milestone.
+void pollHButton() {
+  bool reading=digitalRead(PIN_BUTTON_H);
+  uint32_t now=millis();
+  if(reading!=buttonRaw) {
+    buttonRaw=reading;
+    buttonChangedAt=now;
+  }
+  if(reading!=buttonStable && (uint32_t)(now-buttonChangedAt)>=BUTTON_DEBOUNCE_MS) {
+    buttonStable=reading;
+    if(buttonStable==LOW) {
+      Serial.println("H button pressed");
+      applyCommand('H');
+    }
+  }
+}
+
 void setup() {
   Serial.begin(115200);
   delay(1200);
   randomSeed((uint32_t)micros());
+  pinMode(PIN_BUTTON_H,INPUT_PULLUP);
+  // A button held during startup must be released before it can trigger H.
+  buttonRaw=buttonStable=digitalRead(PIN_BUTTON_H);
+  buttonChangedAt=millis();
   pinMode(PIN_CS_0,OUTPUT);
   pinMode(PIN_CS_1,OUTPUT);
   digitalWrite(PIN_CS_0,HIGH);
@@ -254,6 +281,7 @@ void setup() {
   lcd1.begin(SPI_HZ);
   Serial.println("My First Qubit - browser-matched gate animation");
   Serial.println("Type X, Y, Z, H, M, R, or C (colors) and press Send.");
+  Serial.println("Physical H button: GPIO 4 to GND; one gate per press.");
   showState();
 }
 
@@ -263,4 +291,6 @@ void loop() {
     if(c=='\n'||c=='\r'||c==' '||c=='\t') continue;
     applyCommand((char)toupper((unsigned char)c));
   }
+  pollHButton();
+  delay(1);
 }
