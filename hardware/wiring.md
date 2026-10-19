@@ -51,8 +51,8 @@ Model: Bourns PEC11R-4225F-S0024, 24 detents and 24 pulses per revolution. See [
 
 | Encoder | A signal | C common (middle of 3-pin row) | B signal |
 | --- | --- | --- | --- |
-| Probability / balance | GPIO 18 | GND | GPIO 21 |
-| Relative phase | GPIO 1 | GND | GPIO 2 |
+| Probability / balance | GPIO 1 | GND | GPIO 2 |
+| Relative phase | GPIO 41 | GND | GPIO 42 |
 
 Each bare encoder has a three-contact row for rotation (A, C, B) and a separate two-contact momentary push switch. Leave the two switch contacts and metal mounting tabs unconnected. Use the center rotation contact for GND, and the outer two for A/B. No VCC connection is required; firmware enables internal pull-ups on A/B. If clockwise decreases rather than increases, unplug USB and swap that encoder's two outer signal wires. Do not move its center GND connection. For a breakout board with labeled pins, use the labels instead of this bare-component layout.
 
