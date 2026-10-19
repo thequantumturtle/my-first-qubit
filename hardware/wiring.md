@@ -19,7 +19,28 @@ Two Dorhea 1.28-inch, 240×240 GC9A01 SPI displays on one ESP32-S3.
 - Supply 3.3V; don't assume modules tolerate 5V logic.
 - Headers must have secure solder connections.
 - The serial monitor required USB CDC On Boot: Enabled in this setup.
-- SPI frequency in the current sketch: 10 MHz.
+- SPI frequency in the current sketch: 40 MHz (lower to 20 MHz if wiring is unstable).
 - Confirm 3.3V supply headroom before adding more hardware.
 
-Encoder/button/LED GPIO allocations are *not yet tested or locked*.
+Encoder/LED GPIO allocations are not yet tested or locked.
+## Physical buttons
+
+H on GPIO 4 has passed a hardware test. The other assignments below are ready for bench testing.
+
+| Button | GPIO | Other connection |
+| --- | --- | --- |
+| H | 4 | GND |
+| X | 5 | GND |
+| Y | 6 | GND |
+| Z | 7 | GND |
+| Measure (M) | 15 | GND |
+| Reset state (R) | 16 | GND |
+| Colors (C) | 17 | GND |
+
+Unplug USB before wiring. Each normally-open button connects its GPIO to GND when pressed. Firmware enables INPUT_PULLUP; no external resistor or 3.3V button connection is needed. Black jumpers go to the common ground rail; white jumpers go to the assigned GPIOs. Connect that rail to ESP32 GND. Check whether the rail has a break in its middle.
+
+For the four-leg tactile switches, place them across the breadboard center gap. Use diagonally opposite contacts, as with the tested H button. Keep separate signal rows for each button.
+
+Inputs have 30 ms debounce and trigger once per press. Held buttons do not repeat. A button held at startup must be released first. Press one button at a time and let its animation finish. A complete press/release during an animation can be missed. Simultaneous presses select the first button in the table, without queuing the others. Serial commands still work.
+
+Reset (R) resets the qubit state, not the selected palette or the ESP32 itself.
