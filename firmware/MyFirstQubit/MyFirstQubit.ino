@@ -35,8 +35,8 @@ struct Encoder {
   volatile int quarters;
   volatile int32_t pending;
 };
-Encoder probabilityEncoder={18,21,0,0,0};
-Encoder phaseEncoder={1,2,0,0,0};
+Encoder probabilityEncoder={1,2,0,0,0};
+Encoder phaseEncoder={41,42,0,0,0};
 portMUX_TYPE encoderMux=portMUX_INITIALIZER_UNLOCKED;
 
 Adafruit_GC9A01A lcd0(PIN_CS_0, PIN_DC, PIN_RST_0);
@@ -389,7 +389,7 @@ void setup() {
   Serial.println("My First Qubit - browser-matched gate animation");
   Serial.println("Type X, Y, Z, H, M, R, or C (colors) and press Send.");
   Serial.println("Buttons to GND: H=4 X=5 Y=6 Z=7 M=15 R=16 C=17");
-  Serial.println("Encoders A/B: balance=18/21 phase=1/2; common pins to GND");
+  Serial.println("Encoders A/B: balance=1/2 phase=41/42; common pins to GND");
   showState();
 }
 
