@@ -25,7 +25,7 @@ Two Dorhea 1.28-inch, 240×240 GC9A01 SPI displays on one ESP32-S3.
 Encoder/LED GPIO allocations are not yet tested or locked.
 ## Physical buttons
 
-H on GPIO 4 has passed a hardware test. The other assignments below are ready for bench testing.
+All seven button assignments below passed the builder's bench test on October 18, 2026.
 
 | Button | GPIO | Other connection |
 | --- | --- | --- |
@@ -45,7 +45,7 @@ Inputs have 30 ms debounce and trigger once per press. Held buttons do not repea
 
 Reset (R) resets the qubit state, not the selected palette or the ESP32 itself.
 
-## Rotary encoders (first bench test)
+## Rotary encoders (bench tested October 18, 2026)
 
 Model: Bourns PEC11R-4225F-S0024, 24 detents and 24 pulses per revolution. See [manufacturer datasheet](https://www.bourns.com/docs/product-datasheets/pec11r.pdf).
 
@@ -60,4 +60,4 @@ Unplug USB before wiring. Ensure A, C and B each occupy separate breadboard stri
 
 Each balance click changes theta by 5 degrees, bounded from 0 to 180 degrees. Probability is sin²(theta/2), so clicks are not equal percentage steps. 18 positive clicks from reset reach 50/50, and 36 reach |1>. Each phase click changes relative phase by 15 degrees, wrapping at 360 degrees. At an empty circle, relative phase is undefined; the setting is stored until both amplitudes are nonzero. Knobs preserve the nonzero reference amplitude's phase.
 
-Interrupts count complete quadrature cycles on return to the detent contact state sampled at startup. Leave knobs resting in a click position when powering up. Ordinary bounce and partial reversals do not count; invalid two-bit jumps discard the partial cycle. Probability end stops leave the amplitudes unchanged, including global phase. Moving away from full |1> preserves the surviving amplitude phase. Turns during a gate animation are applied after it finishes. LCD updates are coalesced to the latest accumulated clicks. Start with slow turns; hardware performance and direction still require testing.
+Interrupts count complete quadrature cycles on return to the detent contact state sampled at startup. Leave knobs resting in a click position when powering up. Ordinary bounce and partial reversals do not count; invalid two-bit jumps discard the partial cycle. Probability end stops leave the amplitudes unchanged, including global phase. Moving away from full |1> preserves the surviving amplitude phase. Turns during a gate animation are applied after it finishes. LCD updates are coalesced to the latest accumulated clicks. Slow turns, direction reversal, and both probability end stops passed the builder's bench tests. Fast-turn reliability and final mounting remain to be checked.
