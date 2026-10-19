@@ -28,6 +28,39 @@ Button buttons[] = {
   {17,'C',HIGH,HIGH,0}
 };
 
+// PEC11R-4225F-S0024: 24 pulses and detents/revolution, four edges/click.
+struct Encoder {
+  int pinA,pinB;
+  volatile uint8_t previous;
+  volatile int quarters;
+  volatile int32_t pending;
+};
+Encoder probabilityEncoder={18,21,0,0,0};
+Encoder phaseEncoder={1,2,0,0,0};
+portMUX_TYPE encoderMux=portMUX_INITIALIZER_UNLOCKED;
+
+// ISR only counts valid Gray-code edges; no drawing, floats or serial here.
+void ARDUINO_ISR_ATTR encoderChanged(void *arg) {
+  Encoder *encoder=static_cast<Encoder *>(arg);
+  uint8_t next=(digitalRead(encoder->pinA)<<1)|digitalRead(encoder->pinB);
+  portENTER_CRITICAL_ISR(&encoderMux);
+  uint8_t previous=encoder->previous;
+  uint8_t transition=(previous<<2)|next;
+  if((previous^next)==3) encoder->quarters=0; // Missed/invalid transition.
+  else {
+    int delta=0;
+    switch(transition) {
+      case 2: case 4: case 11: case 13: delta=1;break;
+      case 1: case 7: case 8: case 14: delta=-1;break;
+    }
+    encoder->quarters+=delta;
+    if(encoder->quarters>=4) { encoder->pending++;encoder->quarters=0; }
+    else if(encoder->quarters<=-4) { encoder->pending--;encoder->quarters=0; }
+  }
+  encoder->previous=next;
+  portEXIT_CRITICAL_ISR(&encoderMux);
+}
+
 Adafruit_GC9A01A lcd0(PIN_CS_0, PIN_DC, PIN_RST_0);
 Adafruit_GC9A01A lcd1(PIN_CS_1, PIN_DC, PIN_RST_1);
 
@@ -36,6 +69,9 @@ Amp alpha={1.0f,0.0f}, beta={0.0f,0.0f};
 constexpr float INV_SQRT2=0.70710678118f;
 constexpr float PI_F=3.14159265359f;
 constexpr float QUBIT_EPSILON=1e-10f;
+float relativePhaseMemory=0.0f;
+constexpr float PROBABILITY_STEP=5.0f*PI_F/180.0f; // theta, like browser balance
+constexpr float PHASE_STEP=15.0f*PI_F/180.0f;
 
 float probability(const Amp &a) { return a.re*a.re+a.im*a.im; }
 Amp negate(const Amp &a) { return {-a.re,-a.im}; }
@@ -149,6 +185,7 @@ void showState(bool report=true) {
   float phase0=phaseFor(0),phase1=phaseFor(1);
   float newPhase=phase1-phase0;
   bool phaseDefined=p0>QUBIT_EPSILON && p1>QUBIT_EPSILON;
+  if(phaseDefined) relativePhaseMemory=remainderf(newPhase,2.0f*PI_F);
   if(!frame.getBuffer()) {
     Serial.println("ERROR: Display framebuffer allocation failed");
     return;
@@ -255,7 +292,54 @@ void applyCommand(char cmd) {
     return;
   }
   animateState(a,b,targetA,targetB,unitary,unitary?720:460);
+  if(cmd=='R') relativePhaseMemory=0.0f;
   Serial.printf("Applied %c. ",cmd);
+  showState();
+}
+
+// Same state construction as browser setAngles: keep the current reference
+// phase, set theta and relative phase; retain phi at either probability pole.
+void setKnobAngles(float theta,float phi) {
+  float global=probability(alpha)>QUBIT_EPSILON?atan2f(alpha.im,alpha.re):
+               atan2f(beta.im,beta.re);
+  Amp reference={cosf(global),sinf(global)};
+  Amp offset={cosf(phi),sinf(phi)};
+  relativePhaseMemory=remainderf(phi,2.0f*PI_F);
+  alpha=scaled(reference,cosf(theta/2.0f));
+  beta=scaled(multiply(reference,offset),sinf(theta/2.0f));
+  normalizeState();
+}
+void beginEncoders() {
+  Encoder *encoders[]={&probabilityEncoder,&phaseEncoder};
+  for(auto encoder:encoders) {
+    pinMode(encoder->pinA,INPUT_PULLUP);
+    pinMode(encoder->pinB,INPUT_PULLUP);
+    encoder->previous=(digitalRead(encoder->pinA)<<1)|digitalRead(encoder->pinB);
+    attachInterruptArg(encoder->pinA,encoderChanged,encoder,CHANGE);
+    attachInterruptArg(encoder->pinB,encoderChanged,encoder,CHANGE);
+  }
+}
+void pollEncoders() {
+  portENTER_CRITICAL(&encoderMux);
+  int32_t balanceClicks=probabilityEncoder.pending;
+  int32_t phaseClicks=phaseEncoder.pending;
+  probabilityEncoder.pending=0;
+  phaseEncoder.pending=0;
+  portEXIT_CRITICAL(&encoderMux);
+  if(!balanceClicks && !phaseClicks) return;
+  float p0=fminf(1.0f,fmaxf(0.0f,probability(alpha)));
+  float theta=2.0f*acosf(sqrtf(p0));
+  theta=fminf(PI_F,fmaxf(0.0f,theta+balanceClicks*PROBABILITY_STEP));
+  float phi=remainderf(relativePhaseMemory+phaseClicks*PHASE_STEP,2.0f*PI_F);
+  // A phase-only turn at a pole stores phi without rotating the survivor.
+  // The phase takes visible effect when both circles have nonzero size.
+  if(balanceClicks) setKnobAngles(theta,phi);
+  else if(probability(alpha)>QUBIT_EPSILON && probability(beta)>QUBIT_EPSILON)
+    setKnobAngles(theta,phi);
+  else relativePhaseMemory=phi;
+  Serial.printf("Encoders: balance=%ld phase=%ld; phase setting=%.0f deg\n",
+                (long)balanceClicks,(long)phaseClicks,
+                fmodf(relativePhaseMemory*180.0f/PI_F+360.0f,360.0f));
   showState();
 }
 
@@ -294,6 +378,7 @@ void setup() {
     button.raw=button.stable=digitalRead(button.pin);
     button.changedAt=millis();
   }
+  beginEncoders();
   pinMode(PIN_CS_0,OUTPUT);
   pinMode(PIN_CS_1,OUTPUT);
   digitalWrite(PIN_CS_0,HIGH);
@@ -304,6 +389,7 @@ void setup() {
   Serial.println("My First Qubit - browser-matched gate animation");
   Serial.println("Type X, Y, Z, H, M, R, or C (colors) and press Send.");
   Serial.println("Buttons to GND: H=4 X=5 Y=6 Z=7 M=15 R=16 C=17");
+  Serial.println("Encoders A/B: balance=18/21 phase=1/2; common pins to GND");
   showState();
 }
 
@@ -314,5 +400,6 @@ void loop() {
     applyCommand((char)toupper((unsigned char)c));
   }
   pollButtons();
+  pollEncoders();
   delay(1);
 }
