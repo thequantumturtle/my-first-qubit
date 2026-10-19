@@ -44,3 +44,20 @@ For the four-leg tactile switches, place them across the breadboard center gap. 
 Inputs have 30 ms debounce and trigger once per press. Held buttons do not repeat. A button held at startup must be released first. Press one button at a time and let its animation finish. A complete press/release during an animation can be missed. Simultaneous presses select the first button in the table, without queuing the others. Serial commands still work.
 
 Reset (R) resets the qubit state, not the selected palette or the ESP32 itself.
+
+## Rotary encoders (first bench test)
+
+Model: Bourns PEC11R-4225F-S0024, 24 detents and 24 pulses per revolution. See [manufacturer datasheet](https://www.bourns.com/docs/product-datasheets/pec11r.pdf).
+
+| Encoder | A signal | C common (middle of 3-pin row) | B signal |
+| --- | --- | --- | --- |
+| Probability / balance | GPIO 18 | GND | GPIO 21 |
+| Relative phase | GPIO 1 | GND | GPIO 2 |
+
+Each bare encoder has a three-contact row for rotation (A, C, B) and a separate two-contact momentary push switch. Leave the two switch contacts and metal mounting tabs unconnected. Use the center rotation contact for GND, and the outer two for A/B. No VCC connection is required; firmware enables internal pull-ups on A/B. If clockwise decreases rather than increases, unplug USB and swap that encoder's two outer signal wires. Do not move its center GND connection. For a breakout board with labeled pins, use the labels instead of this bare-component layout.
+
+Unplug USB before wiring. Ensure A, C and B each occupy separate breadboard strips; commoned contacts will prevent decoding. The 4-series rear-facing encoder's mounting tabs may not fit the breadboard: use secure leads rather than forcing the body into it.
+
+Each balance click changes theta by 5 degrees, bounded from 0 to 180 degrees. Probability is sin²(theta/2), so clicks are not equal percentage steps. 18 positive clicks from reset reach 50/50, and 36 reach |1>. Each phase click changes relative phase by 15 degrees, wrapping at 360 degrees. At an empty circle, relative phase is undefined; the setting is stored until both amplitudes are nonzero. Knobs preserve the nonzero reference amplitude's phase.
+
+Interrupts count full quadrature cycles and cancel ordinary contact bounce. Invalid two-bit jumps discard the partial cycle. Turns during a gate animation are applied after it finishes. LCD updates are coalesced to the latest accumulated clicks. Start with slow turns; hardware performance and direction still require testing.
