@@ -39,28 +39,6 @@ Encoder probabilityEncoder={18,21,0,0,0};
 Encoder phaseEncoder={1,2,0,0,0};
 portMUX_TYPE encoderMux=portMUX_INITIALIZER_UNLOCKED;
 
-// ISR only counts valid Gray-code edges; no drawing, floats or serial here.
-void ARDUINO_ISR_ATTR encoderChanged(void *arg) {
-  Encoder *encoder=static_cast<Encoder *>(arg);
-  uint8_t next=(digitalRead(encoder->pinA)<<1)|digitalRead(encoder->pinB);
-  portENTER_CRITICAL_ISR(&encoderMux);
-  uint8_t previous=encoder->previous;
-  uint8_t transition=(previous<<2)|next;
-  if((previous^next)==3) encoder->quarters=0; // Missed/invalid transition.
-  else {
-    int delta=0;
-    switch(transition) {
-      case 2: case 4: case 11: case 13: delta=1;break;
-      case 1: case 7: case 8: case 14: delta=-1;break;
-    }
-    encoder->quarters+=delta;
-    if(encoder->quarters>=4) { encoder->pending++;encoder->quarters=0; }
-    else if(encoder->quarters<=-4) { encoder->pending--;encoder->quarters=0; }
-  }
-  encoder->previous=next;
-  portEXIT_CRITICAL_ISR(&encoderMux);
-}
-
 Adafruit_GC9A01A lcd0(PIN_CS_0, PIN_DC, PIN_RST_0);
 Adafruit_GC9A01A lcd1(PIN_CS_1, PIN_DC, PIN_RST_1);
 
@@ -128,6 +106,28 @@ bool hasShownFrame = false;
 float shortestAngle(float from, float to) {
   float diff = remainderf(to-from, 2.0f*PI_F);
   return diff;
+}
+
+// ISR only counts valid Gray-code edges; no drawing, floats or serial here.
+void ARDUINO_ISR_ATTR encoderChanged(void *arg) {
+  Encoder *encoder=static_cast<Encoder *>(arg);
+  uint8_t next=(digitalRead(encoder->pinA)<<1)|digitalRead(encoder->pinB);
+  portENTER_CRITICAL_ISR(&encoderMux);
+  uint8_t previous=encoder->previous;
+  uint8_t transition=(previous<<2)|next;
+  if((previous^next)==3) encoder->quarters=0; // Missed/invalid transition.
+  else {
+    int delta=0;
+    switch(transition) {
+      case 2: case 4: case 11: case 13: delta=1;break;
+      case 1: case 7: case 8: case 14: delta=-1;break;
+    }
+    encoder->quarters+=delta;
+    if(encoder->quarters>=4) { encoder->pending++;encoder->quarters=0; }
+    else if(encoder->quarters<=-4) { encoder->pending--;encoder->quarters=0; }
+  }
+  encoder->previous=next;
+  portEXIT_CRITICAL_ISR(&encoderMux);
 }
 
 void drawHand(GFXcanvas16 &canvas, int cx, int cy,
