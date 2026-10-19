@@ -34,9 +34,10 @@ struct Encoder {
   volatile uint8_t previous;
   volatile int quarters;
   volatile int32_t pending;
+  uint8_t rest;
 };
-Encoder probabilityEncoder={1,2,0,0,0};
-Encoder phaseEncoder={41,42,0,0,0};
+Encoder probabilityEncoder={1,2,0,0,0,0};
+Encoder phaseEncoder={41,42,0,0,0,0};
 portMUX_TYPE encoderMux=portMUX_INITIALIZER_UNLOCKED;
 
 Adafruit_GC9A01A lcd0(PIN_CS_0, PIN_DC, PIN_RST_0);
@@ -108,7 +109,9 @@ float shortestAngle(float from, float to) {
   return diff;
 }
 
-// ISR only counts valid Gray-code edges; no drawing, floats or serial here.
+// Count a complete cycle only on return to the physical detent sampled at
+// startup. Anchor clicks at rest so bounce cannot leave reversal dead travel.
+// No drawing, floats or serial in this ISR.
 void ARDUINO_ISR_ATTR encoderChanged(void *arg) {
   Encoder *encoder=static_cast<Encoder *>(arg);
   uint8_t next=(digitalRead(encoder->pinA)<<1)|digitalRead(encoder->pinB);
@@ -123,8 +126,11 @@ void ARDUINO_ISR_ATTR encoderChanged(void *arg) {
       case 1: case 7: case 8: case 14: delta=-1;break;
     }
     encoder->quarters+=delta;
-    if(encoder->quarters>=4) { encoder->pending++;encoder->quarters=0; }
-    else if(encoder->quarters<=-4) { encoder->pending--;encoder->quarters=0; }
+    if(next==encoder->rest) {
+      if(encoder->quarters==4) encoder->pending++;
+      else if(encoder->quarters==-4) encoder->pending--;
+      encoder->quarters=0;
+    }
   }
   encoder->previous=next;
   portEXIT_CRITICAL_ISR(&encoderMux);
@@ -301,7 +307,7 @@ void applyCommand(char cmd) {
 // phase, set theta and relative phase; retain phi at either probability pole.
 void setKnobAngles(float theta,float phi) {
   float global=probability(alpha)>QUBIT_EPSILON?atan2f(alpha.im,alpha.re):
-               atan2f(beta.im,beta.re);
+               atan2f(beta.im,beta.re)-relativePhaseMemory;
   Amp reference={cosf(global),sinf(global)};
   Amp offset={cosf(phi),sinf(phi)};
   relativePhaseMemory=remainderf(phi,2.0f*PI_F);
@@ -315,6 +321,9 @@ void beginEncoders() {
     pinMode(encoder->pinA,INPUT_PULLUP);
     pinMode(encoder->pinB,INPUT_PULLUP);
     encoder->previous=(digitalRead(encoder->pinA)<<1)|digitalRead(encoder->pinB);
+    encoder->rest=encoder->previous;
+    encoder->quarters=0;
+    encoder->pending=0;
     attachInterruptArg(encoder->pinA,encoderChanged,encoder,CHANGE);
     attachInterruptArg(encoder->pinB,encoderChanged,encoder,CHANGE);
   }
@@ -328,15 +337,20 @@ void pollEncoders() {
   portEXIT_CRITICAL(&encoderMux);
   if(!balanceClicks && !phaseClicks) return;
   float p0=fminf(1.0f,fmaxf(0.0f,probability(alpha)));
-  float theta=2.0f*acosf(sqrtf(p0));
-  theta=fminf(PI_F,fmaxf(0.0f,theta+balanceClicks*PROBABILITY_STEP));
+  float oldTheta=p0<=QUBIT_EPSILON?PI_F:
+                 probability(beta)<=QUBIT_EPSILON?0.0f:2.0f*acosf(sqrtf(p0));
+  float theta=fminf(PI_F,fmaxf(0.0f,oldTheta+balanceClicks*PROBABILITY_STEP));
+  bool balanceChanged=fabsf(theta-oldTheta)>1e-6f;
   float phi=remainderf(relativePhaseMemory+phaseClicks*PHASE_STEP,2.0f*PI_F);
   // A phase-only turn at a pole stores phi without rotating the survivor.
   // The phase takes visible effect when both circles have nonzero size.
-  if(balanceClicks) setKnobAngles(theta,phi);
-  else if(probability(alpha)>QUBIT_EPSILON && probability(beta)>QUBIT_EPSILON)
-    setKnobAngles(theta,phi);
-  else relativePhaseMemory=phi;
+  if(balanceChanged) setKnobAngles(theta,phi);
+  else if(phaseClicks) {
+    if(probability(alpha)>QUBIT_EPSILON && probability(beta)>QUBIT_EPSILON)
+      setKnobAngles(theta,phi);
+    else relativePhaseMemory=phi;
+  }
+  // No angle change at a hard stop: leave both complex amplitudes untouched.
   Serial.printf("Encoders: balance=%ld phase=%ld; phase setting=%.0f deg\n",
                 (long)balanceClicks,(long)phaseClicks,
                 fmodf(relativePhaseMemory*180.0f/PI_F+360.0f,360.0f));
