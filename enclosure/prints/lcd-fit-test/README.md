@@ -1,5 +1,9 @@
 # LCD fit-test prints — adult engineering use only
 
+For the revised 1.60 mm PCB trial, use the complete
+[PCB160 print package](../lcd-fit-test-pcb160/README.md), including its current
+hardware, pilot-test and assembly instructions. This directory remains historical.
+
 **Historical STL set: hold further printing pending dimensional review.**
 The [1.60 mm PCB revision](../../freecad/LCD-PCB160-review.md) changes the
 mounting stack and proposes smaller fasteners. These three STLs are preserved

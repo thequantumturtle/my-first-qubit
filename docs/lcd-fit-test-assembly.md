@@ -1,9 +1,14 @@
 # Adult-only LCD fit-test assembly and checklist
 
+**Current revised trial:** use the self-contained
+[PCB160 printing, assembly and physical-fit checklist](../enclosure/prints/lcd-fit-test-pcb160/README.md).
+It uses the 1.60 mm PCB stack, revised cradle and provisional M1.6 fastener
+envelopes. The earlier guide below is retained for its original print package.
+
 **Historical assembly guide.** Hold the original STL set pending the
 [1.60 mm PCB dimensional review](../enclosure/freecad/LCD-PCB160-review.md).
-Its revised cradle and provisional M1.6 fasteners have not been exported or
-physically tested. Instructions below describe the earlier preserved print set.
+The revised exports are linked above; physical testing remains pending.
+Instructions below describe the earlier preserved print set.
 
 This is an engineering fit test, not a child-safe toy. Keep the disconnected
 LCD, screws, lens and tools under adult control. Start **unpowered**. Disconnect

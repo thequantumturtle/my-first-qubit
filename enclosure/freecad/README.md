@@ -1,5 +1,11 @@
 # Native CAD and engineering records
 
+The current adult-only LCD fit trial uses the
+[PCB160 three-part print package](../prints/lcd-fit-test-pcb160/README.md),
+exported directly from the saved PCB160 solids with
+[export_lcd_fit_test_pcb160.py](export_lcd_fit_test_pcb160.py).
+Earlier reports and exports remain historical snapshots.
+
 Use FreeCAD 1.0.2 or a compatible later version. Open native documents directly;
 do not run a construction recipe merely to view them. Keep `hardware/models/`
 in the same checkout so external LCD links resolve. Source reopen/link checks

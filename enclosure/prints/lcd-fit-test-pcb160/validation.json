@@ -1,0 +1,354 @@
+{
+  "units": "mm (STL has no encoded unit; import in slicer as millimeters)",
+  "freecad_version": "1.0.2",
+  "source": "enclosure/freecad/MyFirstQubit_LCD_fit_test_PCB160.FCStd",
+  "source_sha256": "c3844bedce5b3454f76c0d35053215117e60eebf8bf610f001a46357ac465c5b",
+  "linear_deflection_mm": 0.02,
+  "angular_deflection_degrees": 5,
+  "checks": {
+    "source_reopened": true,
+    "source_recompute_errors": [],
+    "source_bytes_unchanged": true,
+    "protected_previous_files_unchanged": true
+  },
+  "parts": [
+    {
+      "file": "lcd-fit-panel-pcb160.stl",
+      "source_object": "DimensionedFitCoupon",
+      "orientation": "front face on bed",
+      "cad_dimensions_mm": [
+        64.0,
+        68.0,
+        6.499998526721002
+      ],
+      "stl_dimensions_mm": [
+        64.0,
+        68.0,
+        6.499998569488525
+      ],
+      "max_dimension_error_mm": 4.2767523744657865e-08,
+      "cad_volume_mm3": 15410.08284052685,
+      "mesh_volume_mm3": 15411.7890625,
+      "relative_volume_error": 0.00011072114217734286,
+      "minimum_z_mm": 0.0,
+      "sha256": "a1c1dea4d3daf5edd40380219175a458d25d69dca891312fc00580adb2cecdfb",
+      "checks": {
+        "facets": 5760,
+        "points": 2880,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_facets": 0,
+        "degenerate_facets": 0,
+        "connected_components": 1,
+        "freecad_mesh_is_solid": true,
+        "self_intersections": false,
+        "freecad_has_nonmanifolds": false
+      }
+    },
+    {
+      "file": "lcd-lens-retainer-pcb160.stl",
+      "source_object": "TestLensRetainer",
+      "orientation": "flat rear/flange base on bed",
+      "cad_dimensions_mm": [
+        57.0,
+        45.33072900770155,
+        4.0
+      ],
+      "stl_dimensions_mm": [
+        56.999178475292865,
+        45.33073043823242,
+        4.0
+      ],
+      "max_dimension_error_mm": 0.0008215247071348131,
+      "cad_volume_mm3": 1341.4986586885204,
+      "mesh_volume_mm3": 1341.1947021484375,
+      "relative_volume_error": 0.00022657983152967956,
+      "minimum_z_mm": 0.0,
+      "sha256": "ee7e7a5de1585200950e509acb200fbc3600c2e22089481053307559f2bf9a10",
+      "checks": {
+        "facets": 3988,
+        "points": 1990,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_facets": 0,
+        "degenerate_facets": 0,
+        "connected_components": 1,
+        "freecad_mesh_is_solid": true,
+        "self_intersections": false,
+        "freecad_has_nonmanifolds": false
+      }
+    },
+    {
+      "file": "lcd-rear-cradle-pcb160.stl",
+      "source_object": "TestLCDCradle",
+      "orientation": "flat rear/flange base on bed",
+      "cad_dimensions_mm": [
+        52.0,
+        46.926002144677994,
+        3.6000000000000023
+      ],
+      "stl_dimensions_mm": [
+        52.0,
+        46.926002502441406,
+        3.5999999046325684
+      ],
+      "max_dimension_error_mm": 3.5776341178461735e-07,
+      "cad_volume_mm3": 1427.8183362141299,
+      "mesh_volume_mm3": 1427.7978515625,
+      "relative_volume_error": 1.434681927688432e-05,
+      "minimum_z_mm": 0.0,
+      "sha256": "711a58473102075a705c8265828c84d5630f4f9c0b57ccea4218f05f6ec4d5b6",
+      "checks": {
+        "facets": 3564,
+        "points": 1778,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_facets": 0,
+        "degenerate_facets": 0,
+        "connected_components": 1,
+        "freecad_mesh_is_solid": true,
+        "self_intersections": false,
+        "freecad_has_nonmanifolds": false
+      }
+    }
+  ],
+  "protected_sha256": {
+    "enclosure/freecad/MyFirstQubit_enclosure_iteration01.FCStd": "b4eb6c7f5582d7056a2977a869e44e7ea3d882f4b6f8ac3777b8f813fb5a859f",
+    "enclosure/freecad/MyFirstQubit_enclosure_iteration02.FCStd": "3eb9ce453a9754e1f8493730ffabf3e777d8f4404fa8705616dbc0b2d73cc715",
+    "enclosure/freecad/MyFirstQubit_enclosure_iteration03.FCStd": "fa540beeafcd3cf969152c9e1cc63aa840ad43e62838b466bf04515cfbda4ce2",
+    "enclosure/freecad/MyFirstQubit_enclosure_v04_battery_proposal.FCStd": "21971dc33846aaf59aa8ec1e71d2348ce25087afb398881d08e552de339b5fad",
+    "enclosure/freecad/MyFirstQubit_iteration03_candidate_LCD.FCStd": "207bb282ca417c7883b6e0c3bf7954c22f8e8da871cb6b30a4d52e34782477c7",
+    "enclosure/freecad/MyFirstQubit_iteration03_LCD_mechanical_integration.FCStd": "a50c2ee88b9bda2f826e3edb0a8ccef5aeab8fc37451e167fcbdd4921d925db9",
+    "enclosure/freecad/MyFirstQubit_iteration03_LCD_PCB160.FCStd": "f2eeba13ac041c75b048ff0809c72c09c0493d07c24a912e4585502f7aa19486",
+    "enclosure/freecad/MyFirstQubit_LCD_fit_test.FCStd": "3f42974be0c57095bcfb70b75dcc8499d9fc7ded4a495970f50b503e9ff1bdc5",
+    "enclosure/freecad/MyFirstQubit_LCD_fit_test_PCB160.FCStd": "c3844bedce5b3454f76c0d35053215117e60eebf8bf610f001a46357ac465c5b",
+    "enclosure/freecad/iteration03-candidate-LCD-clearances.json": "3d706138cbc5c015f7fc089afcbdd456331b174c08cf39fb83c2e0798a141012",
+    "enclosure/freecad/iteration03-validation.json": "d786d3f3f6f689ce0efebfc2f85c47cf558da45df48cdd97acf1b396208e0325",
+    "enclosure/freecad/LCD-lens-gap-study.json": "2111ec59da579ef988e1becca4afb3da4a6f4f2bf3a976f3f14215dd58ddc5d6",
+    "enclosure/freecad/LCD-mechanical-validation.json": "530f2df80174837dbce2ee416e467471df7c3ecc4c0c5d9db2746f5147ea385e",
+    "enclosure/freecad/LCD-PCB160-validation.json": "adb393a39b9e725532f762e1c0c12e51bd759df3e0e887c109252cd3e2538ce7",
+    "enclosure/freecad/v04-battery-validation.json": "bc7dec98ef3c818b52dea3b258f6836282c0c12584327fb0649fdeb15a370de3",
+    "hardware/models/gc9a01-meta-mcu/candidate-component.png": "ed2a1cda19a2dc10d51c62b023d44040304318569c3260a0d8ef592ab4bd283b",
+    "hardware/models/gc9a01-meta-mcu/dimensional-findings.json": "410be981ea867a60709fc2e36a41ff7be49fbd0f15c991a3c24a49945d186fd5",
+    "hardware/models/gc9a01-meta-mcu/GC9A01_drawing_PCB160_provisional.FCStd": "0729dfacc7b0be1c45707429b6d58e7ce6bbe06f1462c766ce01adff7fd76a89",
+    "hardware/models/gc9a01-meta-mcu/GC9A01_META_MCU_candidate.FCStd": "aaa7040b5e2afe1830f3533785b7d671350bdbeaa88ab04c540fb72c0f930566",
+    "hardware/models/gc9a01-meta-mcu/import-inspection-axonometric.png": "91885b27821666072cead0ab12738c814e0b315b0a7617784da8e68c3d3c4b53",
+    "hardware/models/gc9a01-meta-mcu/import-inspection-top.png": "3acee82215d9430dbdfaffc8c41e013ee27b3f776ea973ea558005b330ff040a",
+    "hardware/models/gc9a01-meta-mcu/NOTICE.md": "6047ec7c6411140d91253454c8c1fb027556f75ff1e741e7203278312c1230c7",
+    "hardware/models/gc9a01-meta-mcu/PCB160-reference.md": "986efdfe51d12bcec4abc3c470a0b293e64cdd7f1505574a7d0a6d2c1a6ec374",
+    "hardware/models/gc9a01-meta-mcu/README.md": "c4902a7178e30bdf61fbc1bbed94664dd862df9bf4a6837b39b74d25790cb2d0",
+    "hardware/models/gc9a01-meta-mcu/source/frame_size.jpg": "66d46b6a1d3bfce9ac8f211b3a1b092dc1893d47ef1669e6d4625a338a910c73",
+    "hardware/models/gc9a01-meta-mcu/source/frame_size.step": "a8cd9ed26b593c59bd6969a05244a0aef70f404dbc298e24514aba04d3480275",
+    "hardware/models/gc9a01-meta-mcu/source/LICENSE": "22e0ff3e946377a65cede42300b894ab228488194b1474412bb305a68327b4f0",
+    "hardware/models/gc9a01-meta-mcu/source/REVISION.txt": "513a5b0d7b884e64e36451ce729004c30e2fccc8597db9241d8753595ec43d2a",
+    "hardware/models/gc9a01-meta-mcu/source/upstream-readme.md": "1971f37fac7f71b9a7892c5d9e53e00d3269234ae00c4228786d90317fac829e",
+    "enclosure/prints/lcd-fit-test/cad-source-validation.json": "afbaea2a4780d081217fce3f003b24d6b8ddaed48fde1351f43100753be3819d",
+    "enclosure/prints/lcd-fit-test/lcd-fit-panel.stl": "ca653659e094e19db7a50f6ce7ca20970c34eea49813387f27ac3129ce4bf420",
+    "enclosure/prints/lcd-fit-test/lcd-lens-retainer.stl": "ee7e7a5de1585200950e509acb200fbc3600c2e22089481053307559f2bf9a10",
+    "enclosure/prints/lcd-fit-test/lcd-rear-cradle.stl": "7b157046a59ddadd106fcdce9a60a6cf02818fe30d3835ffb443ad461027eae0",
+    "enclosure/prints/lcd-fit-test/validation.json": "d976b0d7bfa7a517b8b6efe32b393a26b3d78aa638345a832f09a9c26c7ca51b",
+    "firmware/MyFirstQubit/MyFirstQubit.ino": "10aec2b5ef98d9d8526c30bfd245215402738474589cea7f35d050649a52f485",
+    "hardware/wiring.md": "ef6672052e48f6aed2b68d9a44b0d52456e055bcd5e8c0cfe521a669fde55803"
+  },
+  "source_revision": "51333cab9216e78d407e691b62e676a4a1f89a4c",
+  "mechanical_recheck": {
+    "component_reference": "Drawing/STEP hybrid; no exact Dorhea dimensions verified",
+    "parameters_mm": {
+      "SourcePCBThickness": 1.6,
+      "SourceHolePitch": 23.0,
+      "PilotDiameterTBD": 1.2,
+      "M2ShankDiameterTBD": 1.6,
+      "M2HeadDiameterTBD": 3.2,
+      "M2HeadHeightTBD": 1.3,
+      "ScrewClearanceTBD": 2.4,
+      "BracketRearGapTBD": 1.6,
+      "SolderHeightTBD": 1.2,
+      "PCBScrewLengthTBD": 8.0,
+      "LensScrewLengthTBD": 4.0,
+      "LensThicknessTBD": 1.5,
+      "LensDiameterTBD": 38.0,
+      "LensGapTargetTBD": 2.0
+    },
+    "source_hole_diameter_mm": 2.0,
+    "physical_dimensions_verified": false,
+    "clearances_mm": [
+      [
+        "Left",
+        "PCBReference",
+        "LCDIntegratedFrontHousing",
+        0.0,
+        0.0
+      ],
+      [
+        "Left",
+        "PCBReference",
+        "LeftLensRetainer",
+        0.906434014004591,
+        0.0
+      ],
+      [
+        "Left",
+        "PCBReference",
+        "LeftLCDCradle",
+        0.0,
+        0.0
+      ],
+      [
+        "Left",
+        "PCBReference",
+        "LeftPolycarbonateLensTBD",
+        3.999998526720997,
+        0.0
+      ],
+      [
+        "Left",
+        "DisplayBodyReference",
+        "LCDIntegratedFrontHousing",
+        1.5132745950421471,
+        0.0
+      ],
+      [
+        "Left",
+        "DisplayBodyReference",
+        "LeftLensRetainer",
+        0.3999999999999838,
+        0.0
+      ],
+      [
+        "Left",
+        "DisplayBodyReference",
+        "LeftLCDCradle",
+        2.099998526721002,
+        0.0
+      ],
+      [
+        "Left",
+        "DisplayBodyReference",
+        "LeftPolycarbonateLensTBD",
+        2.0,
+        0.0
+      ],
+      [
+        "Left",
+        "ConnectorReference",
+        "LCDIntegratedFrontHousing",
+        0.6499991074680196,
+        0.0
+      ],
+      [
+        "Left",
+        "ConnectorReference",
+        "LeftLensRetainer",
+        3.7091704533270917,
+        0.0
+      ],
+      [
+        "Left",
+        "ConnectorReference",
+        "LeftLCDCradle",
+        0.40995679266190793,
+        0.0
+      ],
+      [
+        "Left",
+        "ConnectorReference",
+        "LeftPolycarbonateLensTBD",
+        5.193760338663172,
+        0.0
+      ],
+      [
+        "Right",
+        "PCBReference",
+        "LCDIntegratedFrontHousing",
+        0.0,
+        0.0
+      ],
+      [
+        "Right",
+        "PCBReference",
+        "RightLensRetainer",
+        0.906434014004591,
+        0.0
+      ],
+      [
+        "Right",
+        "PCBReference",
+        "RightLCDCradle",
+        0.0,
+        0.0
+      ],
+      [
+        "Right",
+        "PCBReference",
+        "RightPolycarbonateLensTBD",
+        3.999998526720997,
+        0.0
+      ],
+      [
+        "Right",
+        "DisplayBodyReference",
+        "LCDIntegratedFrontHousing",
+        1.5132745950421413,
+        0.0
+      ],
+      [
+        "Right",
+        "DisplayBodyReference",
+        "RightLensRetainer",
+        0.3999999999999737,
+        0.0
+      ],
+      [
+        "Right",
+        "DisplayBodyReference",
+        "RightLCDCradle",
+        2.099998526721002,
+        0.0
+      ],
+      [
+        "Right",
+        "DisplayBodyReference",
+        "RightPolycarbonateLensTBD",
+        2.0,
+        0.0
+      ],
+      [
+        "Right",
+        "ConnectorReference",
+        "LCDIntegratedFrontHousing",
+        0.6499991074680196,
+        0.0
+      ],
+      [
+        "Right",
+        "ConnectorReference",
+        "RightLensRetainer",
+        3.7091704533270917,
+        0.0
+      ],
+      [
+        "Right",
+        "ConnectorReference",
+        "RightLCDCradle",
+        0.40995679266189,
+        0.0
+      ],
+      [
+        "Right",
+        "ConnectorReference",
+        "RightPolycarbonateLensTBD",
+        5.193760338663172,
+        0.0
+      ]
+    ],
+    "collisions": [],
+    "pcb_screw_engagement_mm": 2.8,
+    "lens_screw_engagement_mm": 2.5,
+    "driver_access_note": "Remove cradle and LCD before lens-ring screws; straight PCB screw approach checked in the preserved CAD validation.",
+    "prior_mechanical_report": "enclosure/freecad/LCD-PCB160-validation.json",
+    "prior_report_passed": true
+  }
+}
