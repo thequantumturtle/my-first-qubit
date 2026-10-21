@@ -1,0 +1,31 @@
+{
+  "invalid": [],
+  "intersections": [],
+  "preserved_sha256": {
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_iteration01.FCStd": "b4eb6c7f5582d7056a2977a869e44e7ea3d882f4b6f8ac3777b8f813fb5a859f",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_iteration02.FCStd": "3eb9ce453a9754e1f8493730ffabf3e777d8f4404fa8705616dbc0b2d73cc715",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_iteration03.FCStd": "fa540beeafcd3cf969152c9e1cc63aa840ad43e62838b466bf04515cfbda4ce2"
+  },
+  "dimensions_mm": {
+    "footprint": [
+      208,
+      198
+    ],
+    "original_housing_height": 35.3,
+    "proposed_housing_height": 61.3,
+    "increase": 26,
+    "including_knobs": 75.3
+  },
+  "measurements_status": "Holder not selected/verified; currents and component masses NOT measured; no actual COM or runtime claim.",
+  "holder_gaps_mm": {
+    "ceiling": 2.0,
+    "cover": 1.0,
+    "regulator": 7.5,
+    "protection": 15.0
+  },
+  "battery_envelope_centroid_mm": [
+    104.0,
+    99.0,
+    -11.999999999999998
+  ]
+}

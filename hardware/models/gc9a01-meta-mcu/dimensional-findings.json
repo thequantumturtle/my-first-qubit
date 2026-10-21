@@ -1,0 +1,142 @@
+{
+  "revision": "8f2157d11d97182927e2d3d9475cf28df620feb1",
+  "source_SHA256": {
+    "frame_size.jpg": "66d46b6a1d3bfce9ac8f211b3a1b092dc1893d47ef1669e6d4625a338a910c73",
+    "frame_size.step": "a8cd9ed26b593c59bd6969a05244a0aef70f404dbc298e24514aba04d3480275",
+    "LICENSE": "22e0ff3e946377a65cede42300b894ab228488194b1474412bb305a68327b4f0",
+    "REVISION.txt": "513a5b0d7b884e64e36451ce729004c30e2fccc8597db9241d8753595ec43d2a",
+    "upstream-readme.md": "1971f37fac7f71b9a7892c5d9e53e00d3269234ae00c4228786d90317fac829e"
+  },
+  "source_display_datum": [
+    13.970005848691,
+    25.781001844678,
+    1.9999985267209999
+  ],
+  "model_display_body_diameter": 35.20000072,
+  "board": {
+    "min": [
+      -4.826581927929002,
+      -0.07658100000000238,
+      -0.41148
+    ],
+    "max": [
+      33.326580807929,
+      44.5765809,
+      0.0
+    ],
+    "size": [
+      38.153162735858004,
+      44.65316190000001,
+      0.41148
+    ]
+  },
+  "header": {
+    "min": [
+      5.360042622845503,
+      0.05507902086918537,
+      -8.800000596045992
+    ],
+    "max": [
+      23.14004292707652,
+      2.5950821933462187,
+      3.04999941925336
+    ],
+    "size": [
+      17.780000304231017,
+      2.540003172477033,
+      11.850000015299353
+    ]
+  },
+  "display_body": {
+    "min": [
+      -3.6299945113089986,
+      8.181001484678,
+      0.49999898672099996
+    ],
+    "max": [
+      31.570006208690998,
+      43.381002204678,
+      1.9999985267209999
+    ],
+    "size": [
+      35.20000072,
+      35.20000072,
+      1.49999954
+    ]
+  },
+  "mounting_holes": [
+    {
+      "center_source": [
+        2.74999958,
+        2.0549997
+      ],
+      "diameter": 2.10000088
+    },
+    {
+      "center_source": [
+        25.7499993,
+        2.0549997
+      ],
+      "diameter": 2.10000088
+    }
+  ],
+  "pin_holes": [
+    {
+      "center_source": [
+        6.62999944,
+        1.32500116
+      ],
+      "diameter": 0.8999982
+    },
+    {
+      "center_source": [
+        9.16999944,
+        1.32500116
+      ],
+      "diameter": 0.8999982
+    },
+    {
+      "center_source": [
+        11.70999944,
+        1.32500116
+      ],
+      "diameter": 0.8999982
+    },
+    {
+      "center_source": [
+        14.24999944,
+        1.32500116
+      ],
+      "diameter": 0.8999982
+    },
+    {
+      "center_source": [
+        16.78999944,
+        1.32500116
+      ],
+      "diameter": 0.8999982
+    },
+    {
+      "center_source": [
+        19.32999944,
+        1.32500116
+      ],
+      "diameter": 0.8999982
+    },
+    {
+      "center_source": [
+        21.86999944,
+        1.32500116
+      ],
+      "diameter": 0.8999982
+    }
+  ],
+  "board_circle_center": [
+    14.24999944,
+    25.499999532071
+  ],
+  "drawing_vs_model_warning": "Drawing width38 and hole dia2 differ from analytic STEP width38.1531627 and holes2.10000088. Cached tessellation width38.11935 was discarded for dimension reporting. Drawing center14.25,25.5 differs from modeled display center13.970006,25.781002. Disk is not an active-area model.",
+  "match_status": "PROVISIONAL: mechanical/electrical equivalence to installed Dorhea boards not established",
+  "measurement_method": "Cleaned analytic BRep bounds; cached import tessellation understated extents. No scaling or geometry correction.",
+  "intrinsic_PCB_connector_overlap_mm3": 0.4195695061410215
+}

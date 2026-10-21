@@ -1,0 +1,1171 @@
+{
+  "source_component": "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\GC9A01_META_MCU_candidate.FCStd",
+  "display_centers": [
+    [
+      58,
+      158,
+      27.3
+    ],
+    [
+      150,
+      158,
+      27.3
+    ]
+  ],
+  "geometry_valid": true,
+  "collisions": [],
+  "clearances": [
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "FrontHousingRounded",
+      "distance_mm": 4.999998526721008,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "RearTrayRounded",
+      "distance_mm": 18.20442094467799,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "ProbabilityKnobConceptRounded",
+      "distance_mm": 10.824028382405881,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "PhaseKnobConceptRounded",
+      "distance_mm": 61.90395399431512,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "HButtonConceptRounded",
+      "distance_mm": 109.76721978207972,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "XButtonConceptRounded",
+      "distance_mm": 55.12503624807781,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "YButtonConceptRounded",
+      "distance_mm": 54.48181221943941,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "ZButtonConceptRounded",
+      "distance_mm": 73.75558558670105,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "MeasureButtonConceptRounded",
+      "distance_mm": 91.33919151459908,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "ResetButtonConceptRounded",
+      "distance_mm": 93.75513453344762,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "ColorsButtonConceptRounded",
+      "distance_mm": 130.6436115429489,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "ProbabilityEncoderTBD",
+      "distance_mm": 15.142417155321994,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "PhaseEncoderTBD",
+      "distance_mm": 70.06441858267956,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "HSwitchTBD",
+      "distance_mm": 117.78318407536524,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "XSwitchTBD",
+      "distance_mm": 63.65035654593359,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "YSwitchTBD",
+      "distance_mm": 63.23757770003801,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "ZSwitchTBD",
+      "distance_mm": 81.44521669929442,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "MeasureSwitchTBD",
+      "distance_mm": 103.8390048628377,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "ResetSwitchTBD",
+      "distance_mm": 100.14242164440155,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "ColorsSwitchTBD",
+      "distance_mm": 135.60912210772267,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "ESP32EnvelopeTBD",
+      "distance_mm": 12.969184749357291,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "BreadboardEnvelopeTBD",
+      "distance_mm": 40.14718300802662,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "WiringReserveTBD",
+      "distance_mm": 24.790669328839904,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "LeftPolycarbonateLensTBD",
+      "distance_mm": 7.499998526720997,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "LeftLensRetainerTBD",
+      "distance_mm": 2.9999985267210008,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "RightPolycarbonateLensTBD",
+      "distance_mm": 54.16560910786143,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "PCBReference",
+      "other": "RightLensRetainerTBD",
+      "distance_mm": 50.73263338649765,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "FrontHousingRounded",
+      "distance_mm": 1.9499991074680239,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "RearTrayRounded",
+      "distance_mm": 13.500000877233006,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ProbabilityKnobConceptRounded",
+      "distance_mm": 8.676583622617152,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "PhaseKnobConceptRounded",
+      "distance_mm": 67.33153840895548,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "HButtonConceptRounded",
+      "distance_mm": 114.63206426324399,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "XButtonConceptRounded",
+      "distance_mm": 56.61124702874415,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "YButtonConceptRounded",
+      "distance_mm": 55.620334910014215,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ZButtonConceptRounded",
+      "distance_mm": 77.60650758212581,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "MeasureButtonConceptRounded",
+      "distance_mm": 93.30017850188102,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ResetButtonConceptRounded",
+      "distance_mm": 94.35629095940602,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ColorsButtonConceptRounded",
+      "distance_mm": 134.63075599418377,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ProbabilityEncoderTBD",
+      "distance_mm": 15.274077176191184,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "PhaseEncoderTBD",
+      "distance_mm": 75.47542790049968,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "HSwitchTBD",
+      "distance_mm": 122.60534879180656,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "XSwitchTBD",
+      "distance_mm": 64.71423213222897,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "YSwitchTBD",
+      "distance_mm": 63.91327136590958,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ZSwitchTBD",
+      "distance_mm": 85.17328750568731,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "MeasureSwitchTBD",
+      "distance_mm": 105.569785086341,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ResetSwitchTBD",
+      "distance_mm": 100.42902266986533,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ColorsSwitchTBD",
+      "distance_mm": 139.52451297276878,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ESP32EnvelopeTBD",
+      "distance_mm": 22.82996292161448,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "BreadboardEnvelopeTBD",
+      "distance_mm": 39.46456099561484,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "WiringReserveTBD",
+      "distance_mm": 23.90268946519623,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "LeftPolycarbonateLensTBD",
+      "distance_mm": 6.773118958200313,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "LeftLensRetainerTBD",
+      "distance_mm": 2.1059487879223373,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "RightPolycarbonateLensTBD",
+      "distance_mm": 67.65863167705501,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "RightLensRetainerTBD",
+      "distance_mm": 64.24721769056046,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "FrontHousingRounded",
+      "distance_mm": 3.448187752428825,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "RearTrayRounded",
+      "distance_mm": 19.399999640000004,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ProbabilityKnobConceptRounded",
+      "distance_mm": 14.756693094050584,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "PhaseKnobConceptRounded",
+      "distance_mm": 67.58427376154931,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "HButtonConceptRounded",
+      "distance_mm": 118.91254644285156,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "XButtonConceptRounded",
+      "distance_mm": 65.45675100264917,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "YButtonConceptRounded",
+      "distance_mm": 64.46504928425507,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ZButtonConceptRounded",
+      "distance_mm": 85.17669329015631,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "MeasureButtonConceptRounded",
+      "distance_mm": 102.610846267491,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ResetButtonConceptRounded",
+      "distance_mm": 102.95153387792791,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ColorsButtonConceptRounded",
+      "distance_mm": 141.91952260584347,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ProbabilityEncoderTBD",
+      "distance_mm": 23.399999640000004,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "PhaseEncoderTBD",
+      "distance_mm": 74.97429412826492,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "HSwitchTBD",
+      "distance_mm": 127.02710636622889,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "XSwitchTBD",
+      "distance_mm": 74.07878671749137,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "YSwitchTBD",
+      "distance_mm": 73.2019819972151,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ZSwitchTBD",
+      "distance_mm": 93.2016241768271,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "MeasureSwitchTBD",
+      "distance_mm": 115.21566136707193,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ResetSwitchTBD",
+      "distance_mm": 109.17539157392382,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ColorsSwitchTBD",
+      "distance_mm": 147.0572193420222,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ESP32EnvelopeTBD",
+      "distance_mm": 14.892951122192017,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "BreadboardEnvelopeTBD",
+      "distance_mm": 48.36165813005175,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "WiringReserveTBD",
+      "distance_mm": 33.8592383386538,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "LeftPolycarbonateLensTBD",
+      "distance_mm": 5.4999999999999964,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "LeftLensRetainerTBD",
+      "distance_mm": 1.0,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "RightPolycarbonateLensTBD",
+      "distance_mm": 55.67234466152832,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "LeftCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "RightLensRetainerTBD",
+      "distance_mm": 52.40954075616386,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "FrontHousingRounded",
+      "distance_mm": 4.999998526721008,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "RearTrayRounded",
+      "distance_mm": 18.20442094467799,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "ProbabilityKnobConceptRounded",
+      "distance_mm": 62.4316402117248,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "PhaseKnobConceptRounded",
+      "distance_mm": 10.824028382405881,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "HButtonConceptRounded",
+      "distance_mm": 55.030214952290116,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "XButtonConceptRounded",
+      "distance_mm": 110.23524284280329,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "YButtonConceptRounded",
+      "distance_mm": 74.10978739903904,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "ZButtonConceptRounded",
+      "distance_mm": 54.54486203117468,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "MeasureButtonConceptRounded",
+      "distance_mm": 91.50140520502745,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "ResetButtonConceptRounded",
+      "distance_mm": 131.02136398564997,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "ColorsButtonConceptRounded",
+      "distance_mm": 93.7351130990309,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "ProbabilityEncoderTBD",
+      "distance_mm": 70.61116942931028,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "PhaseEncoderTBD",
+      "distance_mm": 15.142417155321994,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "HSwitchTBD",
+      "distance_mm": 63.582218585971205,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "XSwitchTBD",
+      "distance_mm": 118.25617721845079,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "YSwitchTBD",
+      "distance_mm": 81.79992463569639,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "ZSwitchTBD",
+      "distance_mm": 63.27073621906314,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "MeasureSwitchTBD",
+      "distance_mm": 103.98843846570735,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "ResetSwitchTBD",
+      "distance_mm": 135.98725577276105,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "ColorsSwitchTBD",
+      "distance_mm": 100.142417155322,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "ESP32EnvelopeTBD",
+      "distance_mm": 13.515681656583016,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "BreadboardEnvelopeTBD",
+      "distance_mm": 40.14718300802662,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "WiringReserveTBD",
+      "distance_mm": 24.790669328839904,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "LeftPolycarbonateLensTBD",
+      "distance_mm": 54.720254527009374,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "LeftLensRetainerTBD",
+      "distance_mm": 51.29164871965846,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "RightPolycarbonateLensTBD",
+      "distance_mm": 7.499998526720997,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "PCBReference",
+      "other": "RightLensRetainerTBD",
+      "distance_mm": 2.9999985267210008,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "FrontHousingRounded",
+      "distance_mm": 1.9499991074680239,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "RearTrayRounded",
+      "distance_mm": 13.500000877233013,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ProbabilityKnobConceptRounded",
+      "distance_mm": 67.8612923891901,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "PhaseKnobConceptRounded",
+      "distance_mm": 8.676583622617152,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "HButtonConceptRounded",
+      "distance_mm": 56.47445314556632,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "XButtonConceptRounded",
+      "distance_mm": 115.10683374288351,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "YButtonConceptRounded",
+      "distance_mm": 77.9799266950452,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ZButtonConceptRounded",
+      "distance_mm": 55.72678656764724,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "MeasureButtonConceptRounded",
+      "distance_mm": 93.4874857747652,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ResetButtonConceptRounded",
+      "distance_mm": 135.01970754688477,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ColorsButtonConceptRounded",
+      "distance_mm": 94.30689747843442,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ProbabilityEncoderTBD",
+      "distance_mm": 76.02338002763665,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "PhaseEncoderTBD",
+      "distance_mm": 15.274077176191184,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "HSwitchTBD",
+      "distance_mm": 64.59905683531225,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "XSwitchTBD",
+      "distance_mm": 123.08541310567976,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "YSwitchTBD",
+      "distance_mm": 85.54922056385777,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ZSwitchTBD",
+      "distance_mm": 63.99468226947712,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "MeasureSwitchTBD",
+      "distance_mm": 105.74628109902089,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ResetSwitchTBD",
+      "distance_mm": 139.91452988648516,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ColorsSwitchTBD",
+      "distance_mm": 100.39948362386971,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "ESP32EnvelopeTBD",
+      "distance_mm": 23.390036774154538,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "BreadboardEnvelopeTBD",
+      "distance_mm": 39.46456099561484,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "WiringReserveTBD",
+      "distance_mm": 23.933046619359757,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "LeftPolycarbonateLensTBD",
+      "distance_mm": 68.19319397930545,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "LeftLensRetainerTBD",
+      "distance_mm": 64.78497866269122,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "RightPolycarbonateLensTBD",
+      "distance_mm": 6.773118958200313,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "ConnectorReference",
+      "other": "RightLensRetainerTBD",
+      "distance_mm": 2.1059487879223373,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "FrontHousingRounded",
+      "distance_mm": 3.4481877524288245,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "RearTrayRounded",
+      "distance_mm": 19.399999640000004,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ProbabilityKnobConceptRounded",
+      "distance_mm": 67.58427376154931,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "PhaseKnobConceptRounded",
+      "distance_mm": 14.756693094050584,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "HButtonConceptRounded",
+      "distance_mm": 65.45675100264917,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "XButtonConceptRounded",
+      "distance_mm": 118.91254644285156,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "YButtonConceptRounded",
+      "distance_mm": 85.17669329015632,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ZButtonConceptRounded",
+      "distance_mm": 64.46504928425507,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "MeasureButtonConceptRounded",
+      "distance_mm": 102.610846267491,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ResetButtonConceptRounded",
+      "distance_mm": 141.91952260584347,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ColorsButtonConceptRounded",
+      "distance_mm": 102.95153387792791,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ProbabilityEncoderTBD",
+      "distance_mm": 74.97429412826494,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "PhaseEncoderTBD",
+      "distance_mm": 23.399999640000004,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "HSwitchTBD",
+      "distance_mm": 74.07878671749137,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "XSwitchTBD",
+      "distance_mm": 127.02710636622888,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "YSwitchTBD",
+      "distance_mm": 93.20162417682708,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ZSwitchTBD",
+      "distance_mm": 73.2019819972151,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "MeasureSwitchTBD",
+      "distance_mm": 115.21566136707193,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ResetSwitchTBD",
+      "distance_mm": 147.0572193420222,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ColorsSwitchTBD",
+      "distance_mm": 109.17539157392383,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "ESP32EnvelopeTBD",
+      "distance_mm": 14.892951122192017,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "BreadboardEnvelopeTBD",
+      "distance_mm": 48.36165813005175,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "WiringReserveTBD",
+      "distance_mm": 33.859238338653796,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "LeftPolycarbonateLensTBD",
+      "distance_mm": 55.67234466152832,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "LeftLensRetainerTBD",
+      "distance_mm": 52.40954075616386,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "RightPolycarbonateLensTBD",
+      "distance_mm": 5.4999999999999964,
+      "overlap_mm3": 0.0
+    },
+    {
+      "module": "RightCandidateLCD",
+      "part": "DisplayBodyReference",
+      "other": "RightLensRetainerTBD",
+      "distance_mm": 1.0,
+      "overlap_mm3": 0.0
+    }
+  ],
+  "extra_socket_reserve_collisions": [],
+  "source_iteration_hashes": {
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_iteration01.FCStd": "b4eb6c7f5582d7056a2977a869e44e7ea3d882f4b6f8ac3777b8f813fb5a859f",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_iteration02.FCStd": "3eb9ce453a9754e1f8493730ffabf3e777d8f4404fa8705616dbc0b2d73cc715",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_iteration03.FCStd": "fa540beeafcd3cf969152c9e1cc63aa840ad43e62838b466bf04515cfbda4ce2",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_v04_battery_proposal.FCStd": "21971dc33846aaf59aa8ec1e71d2348ce25087afb398881d08e552de339b5fad"
+  },
+  "cautions": [
+    "Source component is NOT verified for Dorhea",
+    "Active aperture not modeled",
+    "No fabricated mounting holes/bosses added",
+    "Solder, wiring and real connector dimensions unverified"
+  ],
+  "module_to_module_distance_mm": 53.84683726414201,
+  "all_object_error_states": [],
+  "external_link_reopen_verified": true,
+  "source_STEP_and_drawing_git_blob_hashes_verified": true,
+  "superseded_proxies_hidden_on_reopen": true
+}
