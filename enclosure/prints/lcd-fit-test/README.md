@@ -1,6 +1,11 @@
 # LCD fit-test prints — adult engineering use only
 
-Print **one of each** part below for one LCD. Test both Dorhea modules in turn;
+**Historical STL set: hold further printing pending dimensional review.**
+The [1.60 mm PCB revision](../../freecad/LCD-PCB160-review.md) changes the
+mounting stack and proposes smaller fasteners. These three STLs are preserved
+unchanged and do not represent that revision. Replacement exports require review.
+
+For the historical assembly, print **one of each** part below for one LCD. Test both Dorhea modules in turn;
 do not start with the complete enclosure. This is an unqualified fit coupon,
 not a toddler toy, load-rated part, or approval for child handling.
 

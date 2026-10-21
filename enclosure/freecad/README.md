@@ -51,3 +51,9 @@ inspection screenshots stay local through `.gitignore`.
 The fit-test exporter does not save or alter CAD. Mesh dimensions are in mm by
 convention; the STL format itself is unitless. Digital geometry validation is
 separate from physical fit, material, impact, retention and child-safety testing.
+# Latest LCD dimensional study
+
+The [provisional 1.60 mm PCB revision](LCD-PCB160-review.md) adds separate
+component, enclosure and fit-test documents, with an updated section and
+validation report. Previous sources and the three historical STLs are unchanged.
+Do not use the old print package for the revised stack without review.
