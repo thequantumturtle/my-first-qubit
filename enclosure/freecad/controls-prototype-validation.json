@@ -1,0 +1,384 @@
+{
+  "manufacturer_source": "https://www.bourns.com/docs/product-datasheets/pec11r.pdf",
+  "manufacturer_revision": "04/26",
+  "physical_dimensions_verified": false,
+  "preserved_sha256": {
+    ".git/logs/refs/heads/firmware/amplitude-phase-milestone-1": "340381f98bf5bb0715fbd308e5b553c80d8e8fc9121840b7e1c077ff36d98b7f",
+    ".git/logs/refs/remotes/origin/firmware/amplitude-phase-milestone-1": "c5d2980045207d6ea12f5312547f8dbc8a779327c2dfb40464d830e1424dd5ce",
+    ".git/refs/heads/firmware/amplitude-phase-milestone-1": "5ea6e1441fa8e4f728ad3216f74b16a621f17ab0e44a25236060a5aa9d1492a4",
+    ".git/refs/remotes/origin/firmware/amplitude-phase-milestone-1": "5ea6e1441fa8e4f728ad3216f74b16a621f17ab0e44a25236060a5aa9d1492a4",
+    "enclosure/freecad/iteration03-validation.json": "d786d3f3f6f689ce0efebfc2f85c47cf558da45df48cdd97acf1b396208e0325",
+    "enclosure/freecad/LCD-mechanical-validation.json": "530f2df80174837dbce2ee416e467471df7c3ecc4c0c5d9db2746f5147ea385e",
+    "enclosure/freecad/LCD-PCB160-validation.json": "adb393a39b9e725532f762e1c0c12e51bd759df3e0e887c109252cd3e2538ce7",
+    "enclosure/freecad/MyFirstQubit_enclosure_iteration01.FCStd": "b4eb6c7f5582d7056a2977a869e44e7ea3d882f4b6f8ac3777b8f813fb5a859f",
+    "enclosure/freecad/MyFirstQubit_enclosure_iteration02.FCStd": "3eb9ce453a9754e1f8493730ffabf3e777d8f4404fa8705616dbc0b2d73cc715",
+    "enclosure/freecad/MyFirstQubit_enclosure_iteration03.FCStd": "fa540beeafcd3cf969152c9e1cc63aa840ad43e62838b466bf04515cfbda4ce2",
+    "enclosure/freecad/MyFirstQubit_enclosure_v04_battery_proposal.FCStd": "21971dc33846aaf59aa8ec1e71d2348ce25087afb398881d08e552de339b5fad",
+    "enclosure/freecad/MyFirstQubit_iteration03_candidate_LCD.FCStd": "207bb282ca417c7883b6e0c3bf7954c22f8e8da871cb6b30a4d52e34782477c7",
+    "enclosure/freecad/MyFirstQubit_iteration03_LCD_mechanical_integration.FCStd": "a50c2ee88b9bda2f826e3edb0a8ccef5aeab8fc37451e167fcbdd4921d925db9",
+    "enclosure/freecad/MyFirstQubit_iteration03_LCD_PCB160.FCStd": "f2eeba13ac041c75b048ff0809c72c09c0493d07c24a912e4585502f7aa19486",
+    "enclosure/freecad/MyFirstQubit_LCD_fit_test.FCStd": "3f42974be0c57095bcfb70b75dcc8499d9fc7ded4a495970f50b503e9ff1bdc5",
+    "enclosure/freecad/MyFirstQubit_LCD_fit_test_PCB160.FCStd": "c3844bedce5b3454f76c0d35053215117e60eebf8bf610f001a46357ac465c5b",
+    "enclosure/freecad/v04-battery-validation.json": "bc7dec98ef3c818b52dea3b258f6836282c0c12584327fb0649fdeb15a370de3",
+    "enclosure/prints/lcd-fit-test/cad-source-validation.json": "afbaea2a4780d081217fce3f003b24d6b8ddaed48fde1351f43100753be3819d",
+    "enclosure/prints/lcd-fit-test/lcd-fit-panel.stl": "ca653659e094e19db7a50f6ce7ca20970c34eea49813387f27ac3129ce4bf420",
+    "enclosure/prints/lcd-fit-test/lcd-lens-retainer.stl": "ee7e7a5de1585200950e509acb200fbc3600c2e22089481053307559f2bf9a10",
+    "enclosure/prints/lcd-fit-test/lcd-rear-cradle.stl": "7b157046a59ddadd106fcdce9a60a6cf02818fe30d3835ffb443ad461027eae0",
+    "enclosure/prints/lcd-fit-test/validation.json": "d976b0d7bfa7a517b8b6efe32b393a26b3d78aa638345a832f09a9c26c7ca51b",
+    "enclosure/prints/lcd-fit-test-pcb160/lcd-fit-panel-pcb160.stl": "a1c1dea4d3daf5edd40380219175a458d25d69dca891312fc00580adb2cecdfb",
+    "enclosure/prints/lcd-fit-test-pcb160/lcd-lens-retainer-pcb160.stl": "ee7e7a5de1585200950e509acb200fbc3600c2e22089481053307559f2bf9a10",
+    "enclosure/prints/lcd-fit-test-pcb160/lcd-rear-cradle-pcb160.stl": "711a58473102075a705c8265828c84d5630f4f9c0b57ccea4218f05f6ec4d5b6",
+    "enclosure/prints/lcd-fit-test-pcb160/validation.json": "2edfb3248eb3c45d3338a21062b313f5b02869455667774e097040c347a77586",
+    "firmware/MyFirstQubit/MyFirstQubit.ino": "10aec2b5ef98d9d8526c30bfd245215402738474589cea7f35d050649a52f485",
+    "hardware/wiring.md": "ef6672052e48f6aed2b68d9a44b0d52456e055bcd5e8c0cfe521a669fde55803",
+    "hardware/models/gc9a01-meta-mcu/GC9A01_drawing_PCB160_provisional.FCStd": "0729dfacc7b0be1c45707429b6d58e7ce6bbe06f1462c766ce01adff7fd76a89",
+    "hardware/models/gc9a01-meta-mcu/GC9A01_META_MCU_candidate.FCStd": "aaa7040b5e2afe1830f3533785b7d671350bdbeaa88ab04c540fb72c0f930566"
+  },
+  "invalid": [],
+  "collisions": [],
+  "reopen_errors": [],
+  "parameter_checks": [
+    [
+      "MyFirstQubit_iteration03_controls_prototype",
+      "KnobDiameter",
+      true
+    ],
+    [
+      "MyFirstQubit_encoder_knob_fixture",
+      "KnobDiameter",
+      true
+    ],
+    [
+      "MyFirstQubit_gate_button_fixture_PROVISIONAL",
+      "TravelStopTBD",
+      true
+    ],
+    [
+      "MyFirstQubit_measure_button_fixture_PROVISIONAL",
+      "TravelStopTBD",
+      true
+    ]
+  ],
+  "documents": [
+    {
+      "file": "enclosure/freecad/MyFirstQubit_iteration03_controls_prototype.FCStd",
+      "printed_parts": [
+        "ControlsFrontHousing",
+        "BalanceRearBulkhead",
+        "BalanceRemovableKnob",
+        "PhaseRearBulkhead",
+        "PhaseRemovableKnob",
+        "XCaptiveCap",
+        "XRearGuideAndStop",
+        "XSupportedSwitchCarrier",
+        "XRemovablePCBClip0",
+        "XRemovablePCBClip1",
+        "YCaptiveCap",
+        "YRearGuideAndStop",
+        "YSupportedSwitchCarrier",
+        "YRemovablePCBClip0",
+        "YRemovablePCBClip1",
+        "ZCaptiveCap",
+        "ZRearGuideAndStop",
+        "ZSupportedSwitchCarrier",
+        "ZRemovablePCBClip0",
+        "ZRemovablePCBClip1",
+        "HCaptiveCap",
+        "HRearGuideAndStop",
+        "HSupportedSwitchCarrier",
+        "HRemovablePCBClip0",
+        "HRemovablePCBClip1",
+        "MeasureCaptiveCap",
+        "MeasureRearGuideAndStop",
+        "MeasureSupportedSwitchCarrier",
+        "MeasureRemovablePCBClip0",
+        "MeasureRemovablePCBClip1",
+        "ResetCaptiveCap",
+        "ResetRearGuideAndStop",
+        "ResetSupportedSwitchCarrier",
+        "ResetRemovablePCBClip0",
+        "ResetRemovablePCBClip1",
+        "ColorsCaptiveCap",
+        "ColorsRearGuideAndStop",
+        "ColorsSupportedSwitchCarrier",
+        "ColorsRemovablePCBClip0",
+        "ColorsRemovablePCBClip1"
+      ]
+    },
+    {
+      "file": "enclosure/freecad/MyFirstQubit_encoder_knob_fixture.FCStd",
+      "printed_parts": [
+        "EncoderTestPanel",
+        "BalanceRearBulkhead",
+        "BalanceRemovableKnob"
+      ]
+    },
+    {
+      "file": "enclosure/freecad/MyFirstQubit_gate_button_fixture_PROVISIONAL.FCStd",
+      "printed_parts": [
+        "GateTestPanel",
+        "GateCaptiveCap",
+        "GateRearGuideAndStop",
+        "GateSupportedSwitchCarrier",
+        "GateRemovablePCBClip0",
+        "GateRemovablePCBClip1"
+      ]
+    },
+    {
+      "file": "enclosure/freecad/MyFirstQubit_measure_button_fixture_PROVISIONAL.FCStd",
+      "printed_parts": [
+        "MeasureTestPanel",
+        "MeasureCaptiveCap",
+        "MeasureRearGuideAndStop",
+        "MeasureSupportedSwitchCarrier",
+        "MeasureRemovablePCBClip0",
+        "MeasureRemovablePCBClip1"
+      ]
+    }
+  ],
+  "print_release": {
+    "encoder": "nominal mechanical calibration only; verify real hardware and clamp nut first",
+    "buttons": "BLOCKED: actual switch height/travel/footprint and PCB retention not measured"
+  },
+  "prior_files_unchanged": true,
+  "reference_collisions": [],
+  "existing_electronics_collisions": [],
+  "motion_collisions": [],
+  "lcd_shapes_and_placements_unchanged": true,
+  "layout_clearances_mm": [
+    [
+      "Balance",
+      "Phase",
+      92.0,
+      52.0
+    ],
+    [
+      "Balance",
+      "X",
+      50.24937810560445,
+      16.24937810560445
+    ],
+    [
+      "Balance",
+      "Y",
+      48.30113870293329,
+      14.301138702933287
+    ],
+    [
+      "Balance",
+      "Z",
+      82.15229759416349,
+      48.152297594163485
+    ],
+    [
+      "Balance",
+      "H",
+      125.59060474414477,
+      91.59060474414477
+    ],
+    [
+      "Balance",
+      "Measure",
+      92.28217596047462,
+      54.28217596047462
+    ],
+    [
+      "Balance",
+      "Reset",
+      82.0,
+      51.0
+    ],
+    [
+      "Balance",
+      "Colors",
+      136.01470508735443,
+      105.01470508735443
+    ],
+    [
+      "Phase",
+      "X",
+      125.59060474414477,
+      91.59060474414477
+    ],
+    [
+      "Phase",
+      "Y",
+      82.15229759416349,
+      48.152297594163485
+    ],
+    [
+      "Phase",
+      "Z",
+      48.30113870293329,
+      14.301138702933287
+    ],
+    [
+      "Phase",
+      "H",
+      50.24937810560445,
+      16.24937810560445
+    ],
+    [
+      "Phase",
+      "Measure",
+      92.28217596047462,
+      54.28217596047462
+    ],
+    [
+      "Phase",
+      "Reset",
+      136.01470508735443,
+      105.01470508735443
+    ],
+    [
+      "Phase",
+      "Colors",
+      82.0,
+      51.0
+    ],
+    [
+      "X",
+      "Y",
+      48.0,
+      20.0
+    ],
+    [
+      "X",
+      "Z",
+      96.0,
+      68.0
+    ],
+    [
+      "X",
+      "H",
+      144.0,
+      116.0
+    ],
+    [
+      "X",
+      "Measure",
+      80.95060222135473,
+      48.95060222135473
+    ],
+    [
+      "X",
+      "Reset",
+      37.8549864614954,
+      12.8549864614954
+    ],
+    [
+      "X",
+      "Colors",
+      140.9432509913121,
+      115.94325099131211
+    ],
+    [
+      "Y",
+      "Z",
+      48.0,
+      20.0
+    ],
+    [
+      "Y",
+      "H",
+      96.0,
+      68.0
+    ],
+    [
+      "Y",
+      "Measure",
+      44.10215414239989,
+      12.10215414239989
+    ],
+    [
+      "Y",
+      "Reset",
+      54.48853090330111,
+      29.48853090330111
+    ],
+    [
+      "Y",
+      "Colors",
+      95.46203433826454,
+      70.46203433826454
+    ],
+    [
+      "Z",
+      "H",
+      48.0,
+      20.0
+    ],
+    [
+      "Z",
+      "Measure",
+      44.10215414239989,
+      12.10215414239989
+    ],
+    [
+      "Z",
+      "Reset",
+      95.46203433826454,
+      70.46203433826454
+    ],
+    [
+      "Z",
+      "Colors",
+      54.48853090330111,
+      29.48853090330111
+    ],
+    [
+      "H",
+      "Measure",
+      80.95060222135473,
+      48.95060222135473
+    ],
+    [
+      "H",
+      "Reset",
+      140.9432509913121,
+      115.94325099131211
+    ],
+    [
+      "H",
+      "Colors",
+      37.8549864614954,
+      12.8549864614954
+    ],
+    [
+      "Measure",
+      "Reset",
+      64.0,
+      35.0
+    ],
+    [
+      "Measure",
+      "Colors",
+      64.0,
+      35.0
+    ],
+    [
+      "Reset",
+      "Colors",
+      128.0,
+      106.0
+    ]
+  ],
+  "minimum_front_control_gap_mm": 12.10215414239989,
+  "knob_to_display_center_pitch_mm": 50,
+  "knob_to_lens_plan_gap_mm": 11,
+  "knob_face_gap_mm": 1.3,
+  "worst_nominal_gap_after_encoder_push_mm": 0.5,
+  "button_nominal_actuation_mm": 0.39999999999999997,
+  "button_actuation_validated": false,
+  "rear_breadboard_to_button_deck_gap_mm": 0.7000000000000028,
+  "fillet_editing_note": "Native Part::Fillet Edges radii editable directly. KnobRounding/CapRounding sheet entries are recipe defaults; changing them alone does not alter existing native fillets.",
+  "validation_passed": true,
+  "new_native_sha256": {
+    "enclosure/freecad/MyFirstQubit_iteration03_controls_prototype.FCStd": "422e307f424b72794211711beea4f2110af63f1311b32ba0ad3dff2f4ce4e17d",
+    "enclosure/freecad/MyFirstQubit_encoder_knob_fixture.FCStd": "3666ad892d589892b592023796d67f03951ffa5579db4b4a21132aa108b3b5f4",
+    "enclosure/freecad/MyFirstQubit_gate_button_fixture_PROVISIONAL.FCStd": "5eb64dd909d5b5a12a6a06b21c9a72af935368bd1410e6e95e2e0a8abba9bf3a",
+    "enclosure/freecad/MyFirstQubit_measure_button_fixture_PROVISIONAL.FCStd": "8a03df8009abc87be4379cdca7263cd552afacd66040a6bb4f68cb6cbcc898a0"
+  },
+  "knob_full_rotation_and_push_sweep_collisions": [],
+  "final_saved_native_reopen_passed": true
+}

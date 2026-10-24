@@ -1,0 +1,23 @@
+[
+  {
+    "lens_gap_mm": 2,
+    "header_to_front_min_mm": 0.6499991074680196,
+    "header_front_overlap_mm3": 0.0,
+    "display_to_retainer_min_mm": 0.5999996399999779,
+    "blind_PCB_pilot_roof_mm": 1.4999985267210008
+  },
+  {
+    "lens_gap_mm": 1.5,
+    "header_to_front_min_mm": 0.1499991074680196,
+    "header_front_overlap_mm3": 0.0,
+    "display_to_retainer_min_mm": 0.5999996399999779,
+    "blind_PCB_pilot_roof_mm": 0.9999985267210008
+  },
+  {
+    "lens_gap_mm": 1,
+    "header_to_front_min_mm": 0.0,
+    "header_front_overlap_mm3": 1.1392002558374432,
+    "display_to_retainer_min_mm": 0.5999996399999759,
+    "blind_PCB_pilot_roof_mm": 0.49999852672100076
+  }
+]

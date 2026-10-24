@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="880" viewBox="0 0 1200 880">
+<rect width="1200" height="880" fill="#fffdf8"/>
+<g font-family="sans-serif" fill="#293b32"><text x="45" y="45" font-size="25">LCD axial stack comparison — millimeters</text>
+<text x="45" y="75" font-size="16">Provisional drawing / STEP hybrid. Schematic section; not a manufacturing drawing.</text>
+<text x="75" y="115" font-size="20">Historical STEP PCB</text>
+<rect x="75" y="165.400" width="210" height="33.000" fill="#c5dde0" stroke="#33493c"/>
+<text x="300" y="186.900" font-size="15">PC lens 1.5</text>
+<rect x="75" y="198.400" width="210" height="44.000" fill="#eef2ed" stroke="#33493c"/>
+<text x="300" y="225.400" font-size="15">Air gap 2.0</text>
+<rect x="75" y="242.400" width="210" height="33.000" fill="#444f49" stroke="#33493c"/>
+<text x="300" y="263.900" font-size="15">LCD 1.50</text>
+<rect x="75" y="286.400" width="210" height="9.053" fill="#698a76" stroke="#33493c"/>
+<text x="300" y="295.926" font-size="15">PCB 0.41148</text>
+<rect x="75" y="295.453" width="210" height="26.400" fill="#eee4d0" stroke="#33493c"/>
+<text x="300" y="313.653" font-size="15">Rear reserve 1.2</text>
+<rect x="75" y="321.853" width="210" height="44.000" fill="#a8b7a7" stroke="#33493c"/>
+<text x="300" y="348.853" font-size="15">Cradle base 2.0</text>
+<text x="75" y="550" font-size="16">Optical front Z = 30.8000</text>
+<text x="75" y="575" font-size="16">PCB front Z = 28.8000</text>
+<text x="75" y="600" font-size="16">PCB back Z = 28.3885</text>
+<text x="75" y="625" font-size="16">Cradle rear Z = 25.1885</text>
+<text x="640" y="115" font-size="20">Revised compatible-drawing PCB</text>
+<rect x="640" y="165.400" width="210" height="33.000" fill="#c5dde0" stroke="#33493c"/>
+<text x="865" y="186.900" font-size="15">PC lens 1.5</text>
+<rect x="640" y="198.400" width="210" height="44.000" fill="#eef2ed" stroke="#33493c"/>
+<text x="865" y="225.400" font-size="15">Air gap 2.0</text>
+<rect x="640" y="242.400" width="210" height="33.000" fill="#444f49" stroke="#33493c"/>
+<text x="865" y="263.900" font-size="15">LCD 1.50</text>
+<rect x="640" y="286.400" width="210" height="35.200" fill="#698a76" stroke="#33493c"/>
+<text x="865" y="309.000" font-size="15">PCB 1.6</text>
+<rect x="640" y="321.600" width="210" height="35.200" fill="#eee4d0" stroke="#33493c"/>
+<text x="865" y="344.200" font-size="15">Rear reserve 1.6</text>
+<rect x="640" y="356.800" width="210" height="44.000" fill="#a8b7a7" stroke="#33493c"/>
+<text x="865" y="383.800" font-size="15">Cradle base 2.0</text>
+<text x="640" y="550" font-size="16">Optical front Z = 30.8000</text>
+<text x="640" y="575" font-size="16">PCB front Z = 28.8000</text>
+<text x="640" y="600" font-size="16">PCB back Z = 27.2000</text>
+<text x="640" y="625" font-size="16">Cradle rear Z = 23.6000</text>
+<text x="45" y="690" font-size="18">Unchanged: lens gap 2.0; posts ≈1.5; panel underside/top Z30.3/35.3; enclosure depth.</text>
+<text x="45" y="722" font-size="18">Revised: PCB rearward +1.18852; cradle rearward +1.58852; screw engagement 4.38852 → 2.8.</text>
+<text x="45" y="754" font-size="17">PCB front setback ≈2.0 remains STEP-derived. No exact Dorhea dimensions verified.</text>
+<text x="45" y="786" font-size="17">11.3 mm connector-region annotation UNASSIGNED — original drawing unavailable.</text>
+<text x="45" y="824" font-size="18">Adult engineering prototype. No new STL export. Not child-safe or manufacturing-ready.</text></g></svg>

@@ -44,6 +44,8 @@ Try `R` → `H` → `Z` → `H`: the state should become |1⟩ up to global phas
 - [Components](hardware/components.md)
 - [Test plan](docs/test-plan.md)
 - [Enclosure notes](enclosure/README.md)
+- [LCD fit-test printable parts and print settings](enclosure/prints/lcd-fit-test/README.md)
+- [Illustrated adult-only LCD assembly and checklist](docs/lcd-fit-test-assembly.md)
 
 [Interactive web prototype](https://thequantumturtle.github.io/learn/my-first-qubit/)
 

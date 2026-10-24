@@ -1,0 +1,78 @@
+{
+  "invalid": [],
+  "intersections": [],
+  "contacts": [
+    [
+      "FrontHousingRounded",
+      "ProbabilityKnobConceptRounded"
+    ],
+    [
+      "FrontHousingRounded",
+      "PhaseKnobConceptRounded"
+    ],
+    [
+      "FrontHousingRounded",
+      "HButtonConceptRounded"
+    ],
+    [
+      "FrontHousingRounded",
+      "XButtonConceptRounded"
+    ],
+    [
+      "FrontHousingRounded",
+      "YButtonConceptRounded"
+    ],
+    [
+      "FrontHousingRounded",
+      "ZButtonConceptRounded"
+    ],
+    [
+      "FrontHousingRounded",
+      "MeasureButtonConceptRounded"
+    ],
+    [
+      "FrontHousingRounded",
+      "ResetButtonConceptRounded"
+    ],
+    [
+      "FrontHousingRounded",
+      "ColorsButtonConceptRounded"
+    ],
+    [
+      "FrontHousingRounded",
+      "LeftPolycarbonateLensTBD"
+    ],
+    [
+      "FrontHousingRounded",
+      "LeftLensRetainerTBD"
+    ],
+    [
+      "FrontHousingRounded",
+      "RightPolycarbonateLensTBD"
+    ],
+    [
+      "FrontHousingRounded",
+      "RightLensRetainerTBD"
+    ],
+    [
+      "LCDLeftBoardTBD",
+      "LeftActiveDisplayProxyTBD"
+    ],
+    [
+      "LCDRightBoardTBD",
+      "RightActiveDisplayProxyTBD"
+    ],
+    [
+      "LeftPolycarbonateLensTBD",
+      "LeftLensRetainerTBD"
+    ],
+    [
+      "RightPolycarbonateLensTBD",
+      "RightLensRetainerTBD"
+    ]
+  ],
+  "preserved_sha256": {
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_iteration01.FCStd": "b4eb6c7f5582d7056a2977a869e44e7ea3d882f4b6f8ac3777b8f813fb5a859f",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_iteration02.FCStd": "3eb9ce453a9754e1f8493730ffabf3e777d8f4404fa8705616dbc0b2d73cc715"
+  }
+}

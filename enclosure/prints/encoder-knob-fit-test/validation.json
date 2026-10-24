@@ -1,0 +1,137 @@
+{
+  "units": "mm; STL unitless, import at 100% as millimeters",
+  "purpose": "Adult encoder mechanical calibration, not retention/strength qualification",
+  "linear_deflection_mm": 0.02,
+  "angular_deflection_degrees": 5,
+  "parts": [
+    {
+      "file": "encoder-test-panel.stl",
+      "source": "enclosure/freecad/MyFirstQubit_encoder_knob_fixture.FCStd",
+      "source_object": "EncoderTestPanel",
+      "source_sha256": "3666ad892d589892b592023796d67f03951ffa5579db4b4a21132aa108b3b5f4",
+      "sha256": "63f8a2f0dce3839a5bbf7a2e3323eda9c2ecabc98752ee86d9e49953751ab1df",
+      "dimensions_mm": [
+        64.0,
+        64.0,
+        9.0
+      ],
+      "cad_dimensions_mm": [
+        64.0,
+        64.0,
+        9.0
+      ],
+      "cad_volume_mm3": 20588.66768988768,
+      "mesh_volume_mm3": 20588.865234375,
+      "checks": {
+        "facets": 5200,
+        "points": 2600,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_facets": 0,
+        "degenerate_facets": 0,
+        "connected_components": 1,
+        "solid": true,
+        "self_intersections": false,
+        "nonmanifolds": false
+      }
+    },
+    {
+      "file": "encoder-rear-bulkhead.stl",
+      "source": "enclosure/freecad/MyFirstQubit_encoder_knob_fixture.FCStd",
+      "source_object": "BalanceRearBulkhead",
+      "source_sha256": "3666ad892d589892b592023796d67f03951ffa5579db4b4a21132aa108b3b5f4",
+      "sha256": "39eb999b0bc69e4e2b1a484d7576a5f74e016f77be1bcc70f7d749899906f15a",
+      "dimensions_mm": [
+        36.0,
+        32.0,
+        6.300000190734863
+      ],
+      "cad_dimensions_mm": [
+        36.0,
+        32.0,
+        6.300000000000001
+      ],
+      "cad_volume_mm3": 3674.1645305046354,
+      "mesh_volume_mm3": 3674.224609375,
+      "checks": {
+        "facets": 2944,
+        "points": 1464,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_facets": 0,
+        "degenerate_facets": 0,
+        "connected_components": 1,
+        "solid": true,
+        "self_intersections": false,
+        "nonmanifolds": false
+      }
+    },
+    {
+      "file": "balance-knob.stl",
+      "source": "enclosure/freecad/MyFirstQubit_encoder_knob_fixture.FCStd",
+      "source_object": "BalanceRemovableKnob",
+      "source_sha256": "3666ad892d589892b592023796d67f03951ffa5579db4b4a21132aa108b3b5f4",
+      "sha256": "1fc59fe1346632e3cbfae0e3cbd49a02618c1627e2df03fb31ba83f60e2af8ba",
+      "dimensions_mm": [
+        39.9999999,
+        39.9999999,
+        13.999999899999999
+      ],
+      "cad_dimensions_mm": [
+        40.0000002,
+        40.0000002,
+        14.000000100000001
+      ],
+      "cad_volume_mm3": 16716.59117230845,
+      "mesh_volume_mm3": 16711.1796875,
+      "checks": {
+        "facets": 13188,
+        "points": 6592,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_facets": 0,
+        "degenerate_facets": 0,
+        "connected_components": 1,
+        "solid": true,
+        "self_intersections": false,
+        "nonmanifolds": false
+      }
+    },
+    {
+      "file": "phase-knob.stl",
+      "source": "enclosure/freecad/MyFirstQubit_iteration03_controls_prototype.FCStd",
+      "source_object": "PhaseRemovableKnob",
+      "source_sha256": "422e307f424b72794211711beea4f2110af63f1311b32ba0ad3dff2f4ce4e17d",
+      "sha256": "f25af0221f34ba4e75ee833e766902c6360e939f481e974428bfd59b6bf4a1fb",
+      "dimensions_mm": [
+        39.999999900000006,
+        39.999999900000006,
+        13.999999899999999
+      ],
+      "cad_dimensions_mm": [
+        40.00000019999999,
+        40.00000019999999,
+        14.000000100000001
+      ],
+      "cad_volume_mm3": 16711.97314985029,
+      "mesh_volume_mm3": 16706.580078125,
+      "checks": {
+        "facets": 13484,
+        "points": 6740,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_facets": 0,
+        "degenerate_facets": 0,
+        "connected_components": 1,
+        "solid": true,
+        "self_intersections": false,
+        "nonmanifolds": false
+      }
+    }
+  ],
+  "bounding_method": "Analytical optimalBoundingBox(useTriangulation=False, useShapeTolerance=False)"
+}

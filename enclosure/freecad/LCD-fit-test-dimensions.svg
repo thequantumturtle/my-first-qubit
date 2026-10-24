@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280mm" height="210mm" viewBox="0 0 1120 840">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#46594e"/></marker></defs>
+<rect width="1120" height="840" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#24382b} .dim{stroke:#46594e;stroke-width:1;fill:none;marker-start:url(#arr);marker-end:url(#arr)} .ext{stroke:#859389;stroke-width:1} .hidden{fill:none;stroke:#6f8276;stroke-width:1.3;stroke-dasharray:5 4}</style>
+<text x="40" y="45" font-size="25">MY FIRST QUBIT / LCD FIT TEST</text>
+<text x="40" y="73" font-size="15">Prototype dimensional reference | mm | read dimensions, do not scale | front view with hidden rear features</text>
+<rect x="85" y="257.0" width="384.0" height="408.0" rx="30.0" fill="#eee8d7" stroke="#364e40" stroke-width="2"/>
+<circle class="aperture" cx="277.0" cy="449.0" r="102.0"/>
+<style>.aperture{fill:white;stroke:#364e40;stroke-width:2}</style>
+<circle class="hidden" cx="277.0" cy="449.0" r="115.80000000000001"/>
+<circle class="hidden" cx="277.0" cy="449.0" r="147.0"/>
+<line class="ext" x1="265.0" y1="449.0" x2="289.0" y2="449.0"/>
+<line class="ext" x1="277.0" y1="437.0" x2="277.0" y2="461.0"/>
+<circle class="hidden" cx="209.67996154785402" cy="591.356012868068" r="13.799999999999999"/>
+<circle class="hidden" cx="209.67996154785402" cy="591.356012868068" r="4.800000000000001"/>
+<line class="ext" x1="203.67996154785402" y1="591.356012868068" x2="215.67996154785402" y2="591.356012868068"/>
+<line class="ext" x1="209.67996154785402" y1="585.356012868068" x2="209.67996154785402" y2="597.356012868068"/>
+<circle class="hidden" cx="347.679961547854" cy="591.356012868068" r="13.799999999999999"/>
+<circle class="hidden" cx="347.679961547854" cy="591.356012868068" r="4.800000000000001"/>
+<line class="ext" x1="341.679961547854" y1="591.356012868068" x2="353.679961547854" y2="591.356012868068"/>
+<line class="ext" x1="347.679961547854" y1="585.356012868068" x2="347.679961547854" y2="597.356012868068"/>
+<circle class="hidden" cx="127.0" cy="449.0" r="4.800000000000001"/>
+<circle class="hidden" cx="427.0" cy="449.0" r="4.800000000000001"/>
+<rect class="hidden" x="221.68022155762" y="580.735527422" width="114.0" height="30.0"/>
+<line class="dim" x1="85" y1="700" x2="469.0" y2="700"/>
+<text x="265.0" y="724" font-size="15">64</text>
+<line class="ext" x1="85" y1="667" x2="85" y2="705"/>
+<line class="ext" x1="469.0" y1="667" x2="469.0" y2="705"/>
+<line class="dim" x1="50" y1="665" x2="50" y2="257.0"/>
+<text x="19" y="461.0" font-size="15">68</text>
+<line class="ext" x1="45" y1="665" x2="83" y2="665"/>
+<line class="ext" x1="45" y1="257.0" x2="83" y2="257.0"/>
+<line class="dim" x1="209.67996154785402" y1="628.356012868068" x2="347.679961547854" y2="628.356012868068"/>
+<text x="265.0" y="649.356012868068" font-size="15">23</text>
+<line class="ext" x1="209.67996154785402" y1="595.356012868068" x2="209.67996154785402" y2="632.356012868068"/>
+<line class="ext" x1="347.679961547854" y1="595.356012868068" x2="347.679961547854" y2="632.356012868068"/>
+<line class="dim" x1="501.0" y1="449.0" x2="501.0" y2="591.356012868068"/>
+<text x="509.0" y="520.1780064340339" font-size="15">23.726</text>
+<line class="ext" x1="496.0" y1="449.0" x2="507.0" y2="449.0"/>
+<line class="ext" x1="496.0" y1="591.356012868068" x2="507.0" y2="591.356012868068"/>
+<text x="85" y="238.0" font-size="15">C: LCD axis; lower-left corner is (0,0)</text>
+<text x="565" y="120" font-size="19">PANEL / MODEL-DERIVED LOCATION</text>
+<text x="565" y="150" font-size="14">Panel: 64 x 68 x 5; plan corners R5.</text>
+<text x="565" y="175" font-size="14">LCD axis C = (32, 36). Front +Z; rear features dashed.</text>
+<text x="565" y="200" font-size="14">Optical opening diameter 34 (active-area check pending).</text>
+<text x="565" y="225" font-size="14">Lens seat diameter 38.6; front lip 1 deep.</text>
+<text x="565" y="250" font-size="14">Lens: clear PC diameter 38 x 1.5; separately sourced.</text>
+<text x="565" y="275" font-size="14">Rear shoulder pocket diameter 49, depth 0.7.</text>
+<text x="565" y="300" font-size="14">Modeled PCB holes: (20.780, 12.274),</text>
+<text x="565" y="325" font-size="14">                              (43.780, 12.274); pitch 23.</text>
+<text x="565" y="350" font-size="14">Numerical hole/PCB dimensions are source values, not caliper records.</text>
+<text x="565" y="375" font-size="14">2 posts diameter 4.6; blind pilot diameter 1.6 x 5.</text>
+<text x="565" y="400" font-size="14">2 lens-ring pilots: (7,36), (57,36);</text>
+<text x="565" y="425" font-size="14">  diameter 1.6 x 3.5, from rear; NOT through front.</text>
+<text x="565" y="450" font-size="14">Header relief 19 x 5 x 2.2 deep from rear.</text>
+<text x="565" y="475" font-size="14">Display-to-lens air gap target 2; test under load.</text>
+<text x="565" y="500" font-size="14">Cradle base 2 thick, 1.2 rear gap, four contact lands.</text>
+<text x="565" y="525" font-size="14">Retainer nose OD 38.4 / ID 36.4.</text>
+<text x="565" y="550" font-size="14">Thread-forming M2 screw/pilot assumptions REQUIRE fit testing.</text>
+<text x="565" y="575" font-size="14">Do not force screws or bend the PCB. Front surface has no screws.</text>
+<text x="40" y="758" font-size="17">Print test only: panel + ring + cradle. LCD, clear lens and fasteners are purchased parts.</text>
+<text x="40" y="785" font-size="16">Confirm fit, lens capture, running clearances, strength and service access. NOT a child-safety approval.</text>
+<text x="40" y="813" font-size="14">Generated from LCDMountParameters; regenerate after edits. No general manufacturing tolerances are assigned.</text>
+</svg>
