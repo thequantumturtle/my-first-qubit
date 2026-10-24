@@ -1,5 +1,10 @@
 # Native CAD and engineering records
 
+The [encoder/knob/button subsystem review](controls-mechanical-review.md)
+adds a separate full controls study and three small native fixtures.
+[Encoder calibration prints](../prints/encoder-knob-fit-test/README.md)
+are available; gate/Measure switch-fit exports remain blocked on measurements.
+
 The current adult-only LCD fit trial uses the
 [PCB160 three-part print package](../prints/lcd-fit-test-pcb160/README.md),
 exported directly from the saved PCB160 solids with
