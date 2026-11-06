@@ -5,9 +5,9 @@ and two-piece housing concept are unchanged. Iteration 01's native file and
 construction script are preserved. Iteration 02 is an alternative, not a release.
 
 Native source: [iteration 02](freecad/MyFirstQubit_enclosure_iteration02.FCStd).
-Views: [top](freecad/iteration02-top.png),
-[axonometric](freecad/iteration02-axonometric.png).
-The [construction script](freecad/create_iteration02.py) reuses the unchanged
+Views: [top](freecad/support/visuals/iteration02-top.png),
+[axonometric](freecad/support/visuals/iteration02-axonometric.png).
+The [construction script](freecad/support/scripts/create_iteration02.py) reuses the unchanged
 iteration 01 recipe to build a separate document. The Parameters sheet drives
 positions, diameters, openings, and placeholder envelopes. The feature tree
 retains Housing, ElectronicsPlaceholders, ControlSurfaceConcepts, Construction,

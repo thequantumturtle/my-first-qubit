@@ -7,18 +7,18 @@ not evidence of a completed dimensional inspection or safety assessment.
 
 ## Deliverables
 
-- [New enclosure assembly](MyFirstQubit_iteration03_LCD_mechanical_integration.FCStd)
-- [Independent compact fit-test assembly](MyFirstQubit_LCD_fit_test.FCStd)
-- [Dimensioned fit-test drawing, SVG](LCD-fit-test-dimensions.svg)
-- [Mounting-system exploded view](LCD-mount-exploded.png)
-- [Mounting-system section view](LCD-mount-section.png)
-- [Installed mounting system](LCD-mechanical-inside.png)
-- [Assembled fit test](LCD-fit-test-assembled.png)
-- [Three-part print layout](LCD-fit-test-print-layout.png)
-- [Geometry and clearance data](LCD-mechanical-validation.json)
-- [Lens-gap study](LCD-lens-gap-study.json)
-- [Construction recipe](create_lcd_mechanical_integration.py) and
-  [dimension-drawing generator](document_lcd_fit_test.py)
+- [New enclosure assembly](../../MyFirstQubit_iteration03_LCD_mechanical_integration.FCStd)
+- [Independent compact fit-test assembly](../../MyFirstQubit_LCD_fit_test.FCStd)
+- [Dimensioned fit-test drawing, SVG](../visuals/LCD-fit-test-dimensions.svg)
+- [Mounting-system exploded view](../visuals/LCD-mount-exploded.png)
+- [Mounting-system section view](../visuals/LCD-mount-section.png)
+- [Installed mounting system](../visuals/LCD-mechanical-inside.png)
+- [Assembled fit test](../visuals/LCD-fit-test-assembled.png)
+- [Three-part print layout](../visuals/LCD-fit-test-print-layout.png)
+- [Geometry and clearance data](../validation/LCD-mechanical-validation.json)
+- [Lens-gap study](../validation/LCD-lens-gap-study.json)
+- [Construction recipe](../scripts/create_lcd_mechanical_integration.py) and
+  [dimension-drawing generator](../scripts/document_lcd_fit_test.py)
 
 All earlier native assemblies, the battery proposal, imported component document,
 original STEP/drawing, license and other component reference files are preserved.

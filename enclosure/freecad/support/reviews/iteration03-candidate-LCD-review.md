@@ -6,12 +6,12 @@ consolidation must bring measured LCD geometry into the battery revision after
 component verification; this study does not remove the battery architecture
 requirement.
 
-- [Native enclosure assembly](MyFirstQubit_iteration03_candidate_LCD.FCStd)
-- [Positioned modules, rear axonometric](iteration03-candidate-LCD-inside.png)
-- [Positioned modules, straight rear view](iteration03-candidate-LCD-rear.png)
-- [Full clearance results and protected hashes](iteration03-candidate-LCD-clearances.json)
-- [Component, dimensional comparison and measurements](../../hardware/models/gc9a01-meta-mcu/README.md)
-- [Import/integration recipe](import_candidate_gc9a01.py)
+- [Native enclosure assembly](../../MyFirstQubit_iteration03_candidate_LCD.FCStd)
+- [Positioned modules, rear axonometric](../visuals/iteration03-candidate-LCD-inside.png)
+- [Positioned modules, straight rear view](../visuals/iteration03-candidate-LCD-rear.png)
+- [Full clearance results and protected hashes](../validation/iteration03-candidate-LCD-clearances.json)
+- [Component, dimensional comparison and measurements](../../../../hardware/models/gc9a01-meta-mcu/README.md)
+- [Import/integration recipe](../scripts/import_candidate_gc9a01.py)
 
 ## Assembly and alignment
 

@@ -6,17 +6,17 @@ iterations and print packages are preserved. This is not a child-safe assembly.
 
 ## Native sources and views
 
-- [Full controls study based on PCB160](MyFirstQubit_iteration03_controls_prototype.FCStd)
-- [Encoder/knob fixture](MyFirstQubit_encoder_knob_fixture.FCStd)
-- [Gate fixture, provisional](MyFirstQubit_gate_button_fixture_PROVISIONAL.FCStd)
-- [Measure fixture, provisional](MyFirstQubit_measure_button_fixture_PROVISIONAL.FCStd)
-- [Top view](controls-prototype-top.png) and [axonometric](controls-prototype-axonometric.png)
-- [Encoder section](encoder-fixture-section.png) and [exploded view](encoder-fixture-exploded.png)
-- [Gate section](gate-fixture-section.png) and [exploded view](gate-fixture-exploded.png)
-- [Measure section](measure-fixture-section.png) and [exploded view](measure-fixture-exploded.png)
-- [Geometry, motion and preservation checks](controls-prototype-validation.json)
-- [Construction recipe](create_controls_prototype.py) and [validation/export recipe](validate_export_controls.py)
-- [Encoder calibration prints](../prints/encoder-knob-fit-test/README.md)
+- [Full controls study based on PCB160](../../MyFirstQubit_iteration03_controls_prototype.FCStd)
+- [Encoder/knob fixture](../../MyFirstQubit_encoder_knob_fixture.FCStd)
+- [Gate fixture, provisional](../../MyFirstQubit_gate_button_fixture_PROVISIONAL.FCStd)
+- [Measure fixture, provisional](../../MyFirstQubit_measure_button_fixture_PROVISIONAL.FCStd)
+- [Top view](../visuals/controls-prototype-top.png) and [axonometric](../visuals/controls-prototype-axonometric.png)
+- [Encoder section](../visuals/encoder-fixture-section.png) and [exploded view](../visuals/encoder-fixture-exploded.png)
+- [Gate section](../visuals/gate-fixture-section.png) and [exploded view](../visuals/gate-fixture-exploded.png)
+- [Measure section](../visuals/measure-fixture-section.png) and [exploded view](../visuals/measure-fixture-exploded.png)
+- [Geometry, motion and preservation checks](../validation/controls-prototype-validation.json)
+- [Construction recipe](../scripts/create_controls_prototype.py) and [validation/export recipe](../scripts/validate_export_controls.py)
+- [Encoder calibration prints](../../../prints/encoder-knob-fit-test/README.md)
 
 Each document contains `ControlDimensions`, `ControlConstruction`, separate
 `PrintedControlParts`, hardware references and clearance envelopes. Dimensions

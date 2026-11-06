@@ -29,8 +29,8 @@ and `TestLCDCradle` in the saved
 [PCB160 native fit test](../../freecad/MyFirstQubit_LCD_fit_test_PCB160.FCStd),
 revision `51333cab9216e78d407e691b62e676a4a1f89a4c`.
 The corresponding [enclosure assembly](../../freecad/MyFirstQubit_iteration03_LCD_PCB160.FCStd),
-[dimensional comparison](../../freecad/LCD-PCB160-review.md) and
-[dimensioned axial section](../../freecad/LCD-PCB160-section-dimensions.svg)
+[dimensional comparison](../../freecad/support/reviews/LCD-PCB160-review.md) and
+[dimensioned axial section](../../freecad/support/visuals/LCD-PCB160-section-dimensions.svg)
 explain the engineering assumptions.
 
 The [original print package](../lcd-fit-test/README.md) is preserved as history.
@@ -70,7 +70,7 @@ these meshes have not been machine-specifically sliced here.
 
 ## Overhangs, supports and vulnerable features
 
-![Native fit-test parts, orientation reference](../../freecad/LCD-fit-test-print-layout-PCB160.png)
+![Native fit-test parts, orientation reference](../../freecad/support/visuals/LCD-fit-test-print-layout-PCB160.png)
 
 The native screenshot is an orientation reference, not slicer/G-code evidence.
 Each STL is exported separately from the solid and has its own origin.
@@ -163,7 +163,7 @@ or tighten harder to compensate for misalignment or an incorrect stack.
 
 ## Assembly and service sequence
 
-![Exploded stack: panel, lens, ring, LCD, cradle](../../freecad/LCD-mount-exploded-PCB160.png)
+![Exploded stack: panel, lens, ring, LCD, cradle](../../freecad/support/visuals/LCD-mount-exploded-PCB160.png)
 
 1. **Prepare and measure, unpowered.** Disconnect every power source. Remove
    supports/brim/debris; inspect all prints. Measure both boards' hole sizes,
@@ -197,7 +197,7 @@ or tighten harder to compensate for misalignment or an incorrect stack.
    captured during LCD replacement. Inspect pilots after service and account for
    every loose part. Repeat the trial with the second LCD.
 
-![Section through protected LCD stack](../../freecad/LCD-mount-section-PCB160.png)
+![Section through protected LCD stack](../../freecad/support/visuals/LCD-mount-section-PCB160.png)
 
 Lens-ring screws are obstructed by the installed cradle: removing cradle and
 LCD first is the required access sequence. The modeled straight approach to
@@ -248,11 +248,11 @@ The cleaned analytical CAD bounds differ slightly from cached bounds in the
 historical report: retainer Y is 45.3307 mm and cradle Y is 46.9260 mm. The
 export uses the actual saved solids, not those stale cached bounding boxes.
 
-Use [export_lcd_fit_test_pcb160.py](../../freecad/export_lcd_fit_test_pcb160.py)
+Use [export_lcd_fit_test_pcb160.py](../../freecad/support/scripts/export_lcd_fit_test_pcb160.py)
 inside FreeCAD with `MFQ_REPO_ROOT` set. It reopens saved native sources,
 refuses unsaved source edits/existing STL replacements, exports exactly three
 named solids, orients them and validates the written meshes. It never saves CAD.
-Run [audit_lcd_fit_test_pcb160.py](../../freecad/audit_lcd_fit_test_pcb160.py)
+Run [audit_lcd_fit_test_pcb160.py](../../freecad/support/scripts/audit_lcd_fit_test_pcb160.py)
 with ordinary Python for independent edge/vertex manifold, connected-shell,
 winding, bounds/volume, hash and documentation checks. Preserve this package
 and create a new version if geometry changes after the physical trial.
