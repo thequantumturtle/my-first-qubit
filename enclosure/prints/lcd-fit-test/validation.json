@@ -1,0 +1,114 @@
+{
+  "units": "mm (STL has no encoded unit; import in slicer as millimeters)",
+  "freecad_version": "1.0.2",
+  "source": "enclosure/freecad/MyFirstQubit_LCD_fit_test.FCStd",
+  "source_sha256": "3f42974be0c57095bcfb70b75dcc8499d9fc7ded4a495970f50b503e9ff1bdc5",
+  "linear_deflection_mm": 0.02,
+  "angular_deflection_degrees": 5,
+  "checks": {
+    "source_reopened": true,
+    "source_recompute_errors": [],
+    "source_bytes_unchanged": true
+  },
+  "parts": [
+    {
+      "file": "lcd-fit-panel.stl",
+      "source_object": "DimensionedFitCoupon",
+      "orientation": "front face on bed",
+      "cad_dimensions_mm": [
+        64.0,
+        68.0,
+        6.499998526721002
+      ],
+      "stl_dimensions_mm": [
+        64.0,
+        68.0,
+        6.499998569488525
+      ],
+      "max_dimension_error_mm": 4.2767523744657865e-08,
+      "cad_volume_mm3": 15395.427318575734,
+      "mesh_volume_mm3": 15397.1611328125,
+      "relative_volume_error": 0.00011261877964726686,
+      "minimum_z_mm": 0.0,
+      "sha256": "ca653659e094e19db7a50f6ce7ca20970c34eea49813387f27ac3129ce4bf420",
+      "checks": {
+        "facets": 5752,
+        "points": 2876,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_facets": 0,
+        "degenerate_facets": 0,
+        "connected_components": 1,
+        "freecad_mesh_is_solid": true,
+        "self_intersections": false
+      }
+    },
+    {
+      "file": "lcd-lens-retainer.stl",
+      "source_object": "TestLensRetainer",
+      "orientation": "flat rear/flange base on bed",
+      "cad_dimensions_mm": [
+        57.0,
+        45.33072900770155,
+        4.0
+      ],
+      "stl_dimensions_mm": [
+        56.999178475292865,
+        45.33073043823242,
+        4.0
+      ],
+      "max_dimension_error_mm": 0.0008215247071348131,
+      "cad_volume_mm3": 1341.4986586885204,
+      "mesh_volume_mm3": 1341.1947021484375,
+      "relative_volume_error": 0.00022657983152967956,
+      "minimum_z_mm": 0.0,
+      "sha256": "ee7e7a5de1585200950e509acb200fbc3600c2e22089481053307559f2bf9a10",
+      "checks": {
+        "facets": 3988,
+        "points": 1990,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_facets": 0,
+        "degenerate_facets": 0,
+        "connected_components": 1,
+        "freecad_mesh_is_solid": true,
+        "self_intersections": false
+      }
+    },
+    {
+      "file": "lcd-rear-cradle.stl",
+      "source_object": "TestLCDCradle",
+      "orientation": "flat rear/flange base on bed",
+      "cad_dimensions_mm": [
+        52.0,
+        46.926002144677994,
+        3.200000000000002
+      ],
+      "stl_dimensions_mm": [
+        52.0,
+        46.926002502441406,
+        3.200000047683716
+      ],
+      "max_dimension_error_mm": 3.5776341178461735e-07,
+      "cad_volume_mm3": 1409.2201077048785,
+      "mesh_volume_mm3": 1409.1865234375,
+      "relative_volume_error": 2.383181108109354e-05,
+      "minimum_z_mm": 0.0,
+      "sha256": "7b157046a59ddadd106fcdce9a60a6cf02818fe30d3835ffb443ad461027eae0",
+      "checks": {
+        "facets": 3564,
+        "points": 1778,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_facets": 0,
+        "degenerate_facets": 0,
+        "connected_components": 1,
+        "freecad_mesh_is_solid": true,
+        "self_intersections": false
+      }
+    }
+  ]
+}

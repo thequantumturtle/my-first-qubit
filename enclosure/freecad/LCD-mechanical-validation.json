@@ -1,0 +1,323 @@
+{
+  "source_status": "User reports physical modules match imported model. No exact caliper measurements supplied; all source dimensions are working-model values.",
+  "protected_sha256": {
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_iteration01.FCStd": "b4eb6c7f5582d7056a2977a869e44e7ea3d882f4b6f8ac3777b8f813fb5a859f",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_iteration02.FCStd": "3eb9ce453a9754e1f8493730ffabf3e777d8f4404fa8705616dbc0b2d73cc715",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_iteration03.FCStd": "fa540beeafcd3cf969152c9e1cc63aa840ad43e62838b466bf04515cfbda4ce2",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_enclosure_v04_battery_proposal.FCStd": "21971dc33846aaf59aa8ec1e71d2348ce25087afb398881d08e552de339b5fad",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\enclosure\\freecad\\MyFirstQubit_iteration03_candidate_LCD.FCStd": "207bb282ca417c7883b6e0c3bf7954c22f8e8da871cb6b30a4d52e34782477c7",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\candidate-component.png": "ed2a1cda19a2dc10d51c62b023d44040304318569c3260a0d8ef592ab4bd283b",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\dimensional-findings.json": "410be981ea867a60709fc2e36a41ff7be49fbd0f15c991a3c24a49945d186fd5",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\GC9A01_META_MCU_candidate.FCStd": "aaa7040b5e2afe1830f3533785b7d671350bdbeaa88ab04c540fb72c0f930566",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\import-inspection-axonometric.png": "91885b27821666072cead0ab12738c814e0b315b0a7617784da8e68c3d3c4b53",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\import-inspection-top.png": "3acee82215d9430dbdfaffc8c41e013ee27b3f776ea973ea558005b330ff040a",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\NOTICE.md": "6047ec7c6411140d91253454c8c1fb027556f75ff1e741e7203278312c1230c7",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\README.md": "c4902a7178e30bdf61fbc1bbed94664dd862df9bf4a6837b39b74d25790cb2d0",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\source\\frame_size.jpg": "66d46b6a1d3bfce9ac8f211b3a1b092dc1893d47ef1669e6d4625a338a910c73",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\source\\frame_size.step": "a8cd9ed26b593c59bd6969a05244a0aef70f404dbc298e24514aba04d3480275",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\source\\LICENSE": "22e0ff3e946377a65cede42300b894ab228488194b1474412bb305a68327b4f0",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\source\\REVISION.txt": "513a5b0d7b884e64e36451ce729004c30e2fccc8597db9241d8753595ec43d2a",
+    "C:\\Users\\djust\\OneDrive\\Documents\\GitHub\\my-first-qubit\\hardware\\models\\gc9a01-meta-mcu\\source\\upstream-readme.md": "1971f37fac7f71b9a7892c5d9e53e00d3269234ae00c4228786d90317fac829e"
+  },
+  "invalid": [],
+  "collisions": [],
+  "keepout_conflicts": [],
+  "clearances": [
+    [
+      "Left",
+      "PCBReference",
+      "LeftPolycarbonateLensTBD",
+      3.999998526720997,
+      0.0
+    ],
+    [
+      "Left",
+      "PCBReference",
+      "RearTrayRounded",
+      18.20442094467799,
+      0.0
+    ],
+    [
+      "Left",
+      "PCBReference",
+      "LCDIntegratedFrontHousing",
+      0.0,
+      0.0
+    ],
+    [
+      "Left",
+      "PCBReference",
+      "LeftLensRetainer",
+      0.8298523590011915,
+      0.0
+    ],
+    [
+      "Left",
+      "PCBReference",
+      "LeftLCDCradle",
+      0.0,
+      0.0
+    ],
+    [
+      "Left",
+      "ConnectorReference",
+      "LeftPolycarbonateLensTBD",
+      5.193760338663172,
+      0.0
+    ],
+    [
+      "Left",
+      "ConnectorReference",
+      "RearTrayRounded",
+      17.000000877233,
+      0.0
+    ],
+    [
+      "Left",
+      "ConnectorReference",
+      "LCDIntegratedFrontHousing",
+      0.6499991074680196,
+      0.0
+    ],
+    [
+      "Left",
+      "ConnectorReference",
+      "LeftLensRetainer",
+      3.7091704533270917,
+      0.0
+    ],
+    [
+      "Left",
+      "ConnectorReference",
+      "LeftLCDCradle",
+      0.4099567926619075,
+      0.0
+    ],
+    [
+      "Left",
+      "DisplayBodyReference",
+      "LeftPolycarbonateLensTBD",
+      2.0,
+      0.0
+    ],
+    [
+      "Left",
+      "DisplayBodyReference",
+      "RearTrayRounded",
+      19.399999640000004,
+      0.0
+    ],
+    [
+      "Left",
+      "DisplayBodyReference",
+      "LCDIntegratedFrontHousing",
+      1.7117239193281453,
+      0.0
+    ],
+    [
+      "Left",
+      "DisplayBodyReference",
+      "LeftLensRetainer",
+      0.5999996399999779,
+      0.0
+    ],
+    [
+      "Left",
+      "DisplayBodyReference",
+      "LeftLCDCradle",
+      0.9114789867210007,
+      0.0
+    ],
+    [
+      "Right",
+      "PCBReference",
+      "RightPolycarbonateLensTBD",
+      3.999998526720997,
+      0.0
+    ],
+    [
+      "Right",
+      "PCBReference",
+      "RearTrayRounded",
+      18.20442094467799,
+      0.0
+    ],
+    [
+      "Right",
+      "PCBReference",
+      "LCDIntegratedFrontHousing",
+      0.0,
+      0.0
+    ],
+    [
+      "Right",
+      "PCBReference",
+      "RightLensRetainer",
+      0.8298523590011516,
+      0.0
+    ],
+    [
+      "Right",
+      "PCBReference",
+      "RightLCDCradle",
+      0.0,
+      0.0
+    ],
+    [
+      "Right",
+      "ConnectorReference",
+      "RightPolycarbonateLensTBD",
+      5.193760338663172,
+      0.0
+    ],
+    [
+      "Right",
+      "ConnectorReference",
+      "RearTrayRounded",
+      17.000000877233003,
+      0.0
+    ],
+    [
+      "Right",
+      "ConnectorReference",
+      "LCDIntegratedFrontHousing",
+      0.6499991074680196,
+      0.0
+    ],
+    [
+      "Right",
+      "ConnectorReference",
+      "RightLensRetainer",
+      3.7091704533270917,
+      0.0
+    ],
+    [
+      "Right",
+      "ConnectorReference",
+      "RightLCDCradle",
+      0.4099567926618901,
+      0.0
+    ],
+    [
+      "Right",
+      "DisplayBodyReference",
+      "RightPolycarbonateLensTBD",
+      2.0,
+      0.0
+    ],
+    [
+      "Right",
+      "DisplayBodyReference",
+      "RearTrayRounded",
+      19.399999640000004,
+      0.0
+    ],
+    [
+      "Right",
+      "DisplayBodyReference",
+      "LCDIntegratedFrontHousing",
+      1.7117239193281293,
+      0.0
+    ],
+    [
+      "Right",
+      "DisplayBodyReference",
+      "RightLensRetainer",
+      0.5999996399999822,
+      0.0
+    ],
+    [
+      "Right",
+      "DisplayBodyReference",
+      "RightLCDCradle",
+      0.9114789867210007,
+      0.0
+    ]
+  ],
+  "lens_gap_target_mm": 2,
+  "previous_lens_gap_mm": 5.5,
+  "coupon_mm": [
+    64,
+    68,
+    5
+  ],
+  "screw_note": "M2 envelopes only, no threads. Pilot engagement is deliberate material interference, not collision-free screw threads.",
+  "recompute_errors": [],
+  "part_counts": {
+    "assembly_printed_mounts": 4,
+    "fit_printed_parts": 3
+  },
+  "screw_stack_mm": {
+    "PCB_engagement": 4.38852,
+    "PCB_tip_to_pilot_end": 0.6114800000000002,
+    "lens_engagement": 2.4999999999999964,
+    "pilot_roof_minimum": 1.4999985267210008
+  },
+  "driver_access": {
+    "assumed_diameter_mm": 4,
+    "reach_mm": 10,
+    "PCB_driver_conflicts": [],
+    "lens_driver_blockers_with_LCD_installed": [
+      [
+        "LeftLens0",
+        "LeftLCDCradle"
+      ],
+      [
+        "LeftLens1",
+        "LeftLCDCradle"
+      ],
+      [
+        "RightLens0",
+        "RightLCDCradle"
+      ],
+      [
+        "RightLens1",
+        "RightLCDCradle"
+      ]
+    ]
+  },
+  "reopen_errors": [],
+  "fit_assembly_collisions": [],
+  "print_layout_bounds_mm": [
+    [
+      "PrintPanel",
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        64.0,
+        68.0,
+        6.499998526721002
+      ]
+    ],
+    [
+      "PrintLensRing",
+      [
+        72.0,
+        0.0,
+        0.0
+      ],
+      [
+        129.0,
+        45.305628539692066,
+        4.0
+      ]
+    ],
+    [
+      "PrintCradle",
+      [
+        137.0,
+        0.0,
+        0.0
+      ],
+      [
+        189.0,
+        46.90996166769372,
+        3.200000000000002
+      ]
+    ]
+  ],
+  "earlier_files_hash_verified": true
+}

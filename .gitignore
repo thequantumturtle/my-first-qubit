@@ -7,3 +7,19 @@
 build/
 .DS_Store
 Thumbs.db
+
+# FreeCAD temporary backups and Python caches (keep .FCStd and intentional STLs)
+*.FCBak
+*.FCStd[0-9]*
+*.FCStd~
+*.pyc
+__pycache__/
+.pytest_cache/
+
+# Local script environment and credentials
+.env
+.env.*
+!.env.example
+
+# Superseded local import inspection screenshots (keep the final component view)
+/hardware/models/gc9a01-meta-mcu/import-inspection-*.png

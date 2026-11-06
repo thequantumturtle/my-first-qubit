@@ -1,0 +1,91 @@
+{
+  "freecad_version": "1.0.2",
+  "files": [
+    {
+      "file": "enclosure/freecad/MyFirstQubit_enclosure_iteration01.FCStd",
+      "sha256": "b4eb6c7f5582d7056a2977a869e44e7ea3d882f4b6f8ac3777b8f813fb5a859f",
+      "reopened_from_private_copy": true,
+      "invalid_objects": [],
+      "external_links": []
+    },
+    {
+      "file": "enclosure/freecad/MyFirstQubit_enclosure_iteration02.FCStd",
+      "sha256": "3eb9ce453a9754e1f8493730ffabf3e777d8f4404fa8705616dbc0b2d73cc715",
+      "reopened_from_private_copy": true,
+      "invalid_objects": [],
+      "external_links": []
+    },
+    {
+      "file": "enclosure/freecad/MyFirstQubit_enclosure_iteration03.FCStd",
+      "sha256": "fa540beeafcd3cf969152c9e1cc63aa840ad43e62838b466bf04515cfbda4ce2",
+      "reopened_from_private_copy": true,
+      "invalid_objects": [],
+      "external_links": []
+    },
+    {
+      "file": "enclosure/freecad/MyFirstQubit_enclosure_v04_battery_proposal.FCStd",
+      "sha256": "21971dc33846aaf59aa8ec1e71d2348ce25087afb398881d08e552de339b5fad",
+      "reopened_from_private_copy": true,
+      "invalid_objects": [],
+      "external_links": []
+    },
+    {
+      "file": "enclosure/freecad/MyFirstQubit_iteration03_candidate_LCD.FCStd",
+      "sha256": "207bb282ca417c7883b6e0c3bf7954c22f8e8da871cb6b30a4d52e34782477c7",
+      "reopened_from_private_copy": true,
+      "invalid_objects": [],
+      "external_links": [
+        {
+          "name": "LeftCandidateLCD",
+          "target_file": "hardware/models/gc9a01-meta-mcu/GC9A01_META_MCU_candidate.FCStd",
+          "resolved_inside_mirror": true
+        },
+        {
+          "name": "RightCandidateLCD",
+          "target_file": "hardware/models/gc9a01-meta-mcu/GC9A01_META_MCU_candidate.FCStd",
+          "resolved_inside_mirror": true
+        }
+      ]
+    },
+    {
+      "file": "enclosure/freecad/MyFirstQubit_iteration03_LCD_mechanical_integration.FCStd",
+      "sha256": "a50c2ee88b9bda2f826e3edb0a8ccef5aeab8fc37451e167fcbdd4921d925db9",
+      "reopened_from_private_copy": true,
+      "invalid_objects": [],
+      "external_links": [
+        {
+          "name": "LeftCandidateLCD",
+          "target_file": "hardware/models/gc9a01-meta-mcu/GC9A01_META_MCU_candidate.FCStd",
+          "resolved_inside_mirror": true
+        },
+        {
+          "name": "RightCandidateLCD",
+          "target_file": "hardware/models/gc9a01-meta-mcu/GC9A01_META_MCU_candidate.FCStd",
+          "resolved_inside_mirror": true
+        }
+      ]
+    },
+    {
+      "file": "enclosure/freecad/MyFirstQubit_LCD_fit_test.FCStd",
+      "sha256": "3f42974be0c57095bcfb70b75dcc8499d9fc7ded4a495970f50b503e9ff1bdc5",
+      "reopened_from_private_copy": true,
+      "invalid_objects": [],
+      "external_links": [
+        {
+          "name": "TestLCDWorkingReference",
+          "target_file": "hardware/models/gc9a01-meta-mcu/GC9A01_META_MCU_candidate.FCStd",
+          "resolved_inside_mirror": true
+        }
+      ]
+    },
+    {
+      "file": "hardware/models/gc9a01-meta-mcu/GC9A01_META_MCU_candidate.FCStd",
+      "sha256": "aaa7040b5e2afe1830f3533785b7d671350bdbeaa88ab04c540fb72c0f930566",
+      "reopened_from_private_copy": true,
+      "invalid_objects": [],
+      "external_links": []
+    }
+  ],
+  "errors": [],
+  "original_bytes_unchanged": true
+}

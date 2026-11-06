@@ -1,0 +1,8 @@
+# Native CAD and print meshes must survive checkout byte-for-byte.
+*.FCStd binary
+*.stl binary
+
+# Preserve downloaded upstream originals, including their line endings and
+# existing whitespace. Their hashes/provenance are checked instead of reformatting.
+hardware/models/gc9a01-meta-mcu/source/* -text -whitespace
+hardware/models/gc9a01-meta-mcu/source/*.step binary

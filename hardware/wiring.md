@@ -22,7 +22,7 @@ Two Dorhea 1.28-inch, 240×240 GC9A01 SPI displays on one ESP32-S3.
 - SPI frequency in the current sketch: 40 MHz (lower to 20 MHz if wiring is unstable).
 - Confirm 3.3V supply headroom before adding more hardware.
 
-Encoder/LED GPIO allocations are not yet tested or locked.
+Both encoder GPIO assignments below passed bench testing on October 18, 2026. Fast-turn reliability and final mounting remain to be checked; no external LED GPIO allocation is documented.
 ## Physical buttons
 
 All seven button assignments below passed the builder's bench test on October 18, 2026.
