@@ -1,4 +1,26 @@
-# Fully 3D-printed enclosure development
+# Enclosure: current designs and printing status
+
+**Prototype status (November 2026):** Editable FreeCAD source and small, validated fit-test STL packages are available. **The complete 208 × 198 mm housing has not been released as a print-ready assembly.** No child-use or production safety qualification has been performed.
+
+## Start here
+
+| Goal | Recommended file |
+| --- | --- |
+| View the most complete controls/enclosure concept | [Iteration 03 controls assembly (.FCStd)](freecad/MyFirstQubit_iteration03_controls_prototype.FCStd) |
+| Work on the main housing geometry | [Iteration 03 enclosure (.FCStd)](freecad/MyFirstQubit_enclosure_iteration03.FCStd) |
+| Print the encoder/knob fit test | [Four STLs and instructions](prints/encoder-knob-fit-test/README.md) |
+| Print an LCD fit test using the PCB160 reference | [Three STLs and instructions](prints/lcd-fit-test-pcb160/README.md) |
+| See the earlier LCD test | [Original LCD test package](prints/lcd-fit-test/README.md) |
+| Check unfinished mounts and fit requirements | [Controls review](freecad/controls-mechanical-review.md) and [housing review](freecad/iteration03-review.md) |
+
+**For a printing collaborator:** Use the small STL fit-test packages above for actual prints. The full enclosure and controls assembly are editable CAD studies, not a validated STL production package. Do not print every visible CAD object: hardware envelopes, electronic placeholders, construction tools and clear lenses are not plastic print parts. Verify printer bed size; the full panel footprint is 208 × 198 mm without brim.
+
+All iterations and validation reports remain available under [freecad/](freecad/). They are retained intentionally as design history rather than duplicated release candidates.
+
+---
+
+## Historical design notes
+
 
 For the first physical trial, print only the independent LCD coupon, retainer
 and cradle: [print files/settings](prints/lcd-fit-test/README.md),
