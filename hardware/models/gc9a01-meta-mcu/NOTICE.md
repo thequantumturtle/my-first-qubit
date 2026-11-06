@@ -35,7 +35,7 @@ normalization, provenance fields, display colors, dimensional inspection and
 engineering documentation. The original import tree is retained in the component
 document; normalized parts are translated copies of the three source BReps with
 cached tessellation removed, not reshaped or scaled. The conversion recipe is
-`../../../enclosure/freecad/import_candidate_gc9a01.py` from this directory.
+`../../../enclosure/freecad/support/scripts/import_candidate_gc9a01.py` from this directory.
 The candidate component and its upstream-derived geometry retain EPL-1.0 terms;
 the original STEP and conversion recipe remain available alongside the documents
 for source access. No original notice has been removed. No files were committed

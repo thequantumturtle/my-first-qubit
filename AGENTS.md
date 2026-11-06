@@ -161,7 +161,7 @@ unless a change is explicitly scoped and justified.
 Before exporting fit-test meshes, reopen the native fit-test file, select only
 the panel coupon, lens retainer and rear cradle, and validate single closed
 solids plus round-tripped mesh topology and millimeter bounds. Use
-`enclosure/freecad/export_lcd_fit_test.py`; do not save over historical CAD sources.
+`enclosure/freecad/support/scripts/export_lcd_fit_test.py`; do not save over historical CAD sources.
 Record export validation separately from actual printer accuracy and physical
 fit results. See `docs/lcd-fit-test-assembly.md` before assembly or powered tests.
 
