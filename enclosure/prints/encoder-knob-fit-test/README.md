@@ -20,10 +20,10 @@ They contain only printed geometry, with minimum Z=0.
 and written-STL topology checks. Sources:
 [encoder fixture](../../freecad/MyFirstQubit_encoder_knob_fixture.FCStd),
 [Phase knob in full assembly](../../freecad/MyFirstQubit_iteration03_controls_prototype.FCStd).
-See the [engineering review](../../freecad/controls-mechanical-review.md)
+See the [engineering review](../../freecad/support/reviews/controls-mechanical-review.md)
 for datums, manufacturer evidence, loads and button-release blockers.
 
-![Encoder fixture section](../../freecad/encoder-fixture-section.png)
+![Encoder fixture section](../../freecad/support/visuals/encoder-fixture-section.png)
 
 ## Starting print settings and inspection
 

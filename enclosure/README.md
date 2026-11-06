@@ -11,7 +11,7 @@
 | Print the encoder/knob fit test | [Four STLs and instructions](prints/encoder-knob-fit-test/README.md) |
 | Print an LCD fit test using the PCB160 reference | [Three STLs and instructions](prints/lcd-fit-test-pcb160/README.md) |
 | See the earlier LCD test | [Original LCD test package](prints/lcd-fit-test/README.md) |
-| Check unfinished mounts and fit requirements | [Controls review](freecad/controls-mechanical-review.md) and [housing review](freecad/iteration03-review.md) |
+| Check unfinished mounts and fit requirements | [Controls review](freecad/support/reviews/controls-mechanical-review.md) and [housing review](freecad/support/reviews/iteration03-review.md) |
 
 **For a printing collaborator:** Use the small STL fit-test packages above for actual prints. The full enclosure and controls assembly are editable CAD studies, not a validated STL production package. Do not print every visible CAD object: hardware envelopes, electronic placeholders, construction tools and clear lenses are not plastic print parts. Verify printer bed size; the full panel footprint is 208 × 198 mm without brim.
 
@@ -25,17 +25,17 @@ All iterations and validation reports remain available under [freecad/](freecad/
 For the first physical trial, print only the independent LCD coupon, retainer
 and cradle: [print files/settings](prints/lcd-fit-test/README.md),
 [illustrated adult assembly/checklist](../docs/lcd-fit-test-assembly.md), and
-[dimensioned drawing](freecad/LCD-fit-test-dimensions.svg).
+[dimensioned drawing](freecad/support/visuals/LCD-fit-test-dimensions.svg).
 The full enclosure is not released for manufacturing or child use.
 
 | Design stage | Source / review |
 | --- | --- |
 | Iteration 01: parametric baseline | [native CAD](freecad/MyFirstQubit_enclosure_iteration01.FCStd) |
 | Iteration 02: control hierarchy | [layout proposal](iteration02-proposal.md) |
-| Iteration 03: calm discovery-board appearance | [design review](freecad/iteration03-review.md) |
-| LCD working-model integration and captured lens mounting | [mechanical review](freecad/LCD-mechanical-review.md) |
+| Iteration 03: calm discovery-board appearance | [design review](freecad/support/reviews/iteration03-review.md) |
+| LCD working-model integration and captured lens mounting | [mechanical review](freecad/support/reviews/LCD-mechanical-review.md) |
 | Independent 64 x 68 mm LCD fit test | [native CAD](freecad/MyFirstQubit_LCD_fit_test.FCStd) |
-| V0.4 battery architecture and packaging study | [power requirements](power-v04.md), [packaging](freecad/v04-battery-review.md) |
+| V0.4 battery architecture and packaging study | [power requirements](power-v04.md), [packaging](freecad/support/reviews/v04-battery-review.md) |
 
 The reported Dorhea/model match is qualitative; numerical component dimensions,
 mounting strength, optical stack and moving clearances still require physical
@@ -51,7 +51,7 @@ with a screw-secured cover and captive fasteners where practical. Reserve voltag
 monitoring and future low-battery indication without modifying firmware now.
 
 See [power architecture and verification requirements](power-v04.md) and the
-separate [V0.4 battery packaging proposal](freecad/v04-battery-review.md).
+separate [V0.4 battery packaging proposal](freecad/support/reviews/v04-battery-review.md).
 Holder selection/dimensions and operating/peak current measurements are pending;
 do not add exact mounts or wire an unregulated pack to ESP32 power pins.
 The sections below record the initial enclosure direction; Iterations 01-03

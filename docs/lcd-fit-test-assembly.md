@@ -6,7 +6,7 @@ It uses the 1.60 mm PCB stack, revised cradle and provisional M1.6 fastener
 envelopes. The earlier guide below is retained for its original print package.
 
 **Historical assembly guide.** Hold the original STL set pending the
-[1.60 mm PCB dimensional review](../enclosure/freecad/LCD-PCB160-review.md).
+[1.60 mm PCB dimensional review](../enclosure/freecad/support/reviews/LCD-PCB160-review.md).
 The revised exports are linked above; physical testing remains pending.
 Instructions below describe the earlier preserved print set.
 
@@ -16,14 +16,14 @@ USB and every other supply before handling electronics; this guide does not
 authorize battery wiring or simultaneous power sources.
 
 Print one set of [these three STLs](../enclosure/prints/lcd-fit-test/README.md).
-Use the [dimensioned drawing](../enclosure/freecad/LCD-fit-test-dimensions.svg)
-and [mechanical review](../enclosure/freecad/LCD-mechanical-review.md), not a
+Use the [dimensioned drawing](../enclosure/freecad/support/visuals/LCD-fit-test-dimensions.svg)
+and [mechanical review](../enclosure/freecad/support/reviews/LCD-mechanical-review.md), not a
 scaled screenshot, for dimensions. The user reports the boards match the working
 model, but individual physical dimensions and safe clamp loads remain unmeasured.
 
 ## 1. Identify and prepare the printed parts
 
-![Three separate printable pieces: panel, retainer and cradle](../enclosure/freecad/LCD-fit-test-print-layout.png)
+![Three separate printable pieces: panel, retainer and cradle](../enclosure/freecad/support/visuals/LCD-fit-test-print-layout.png)
 
 Left to right: panel coupon, stepped lens retainer, rear cradle. The clear lens,
 LCD and four screws are purchased parts. The picture is a layout reference;
@@ -37,7 +37,7 @@ before bringing the LCD near them. No motorized driver or forced fit.
 
 ## 2. Capture the lens first
 
-![Exploded order: panel, lens, retaining ring, LCD and cradle](../enclosure/freecad/LCD-mount-exploded.png)
+![Exploded order: panel, lens, retaining ring, LCD and cradle](../enclosure/freecad/support/visuals/LCD-mount-exploded.png)
 
 Rest the panel front-down on a clean, non-abrasive surface. From the rear, place
 the measured **38 x 1.5 mm provisional polycarbonate disk** into its pocket so
@@ -69,7 +69,7 @@ review. The STEP lacks these real rear details.
 
 ## 4. Install the cradle and rear fasteners
 
-![Assembled coupon, LCD, ring and rear cradle](../enclosure/freecad/LCD-fit-test-assembled.png)
+![Assembled coupon, LCD, ring and rear cradle](../enclosure/freecad/support/visuals/LCD-fit-test-assembled.png)
 
 Place the cradle with its **raised pads toward the PCB**. Keep its header opening
 clear. Insert the two provisional M2 x 8 PCB/cradle screws through the cradle and
@@ -85,7 +85,7 @@ or establish retention strength. A hand-fit assembly is not an impact test.
 
 ## 5. Inspect the optical, PCB and wiring clearances
 
-![Section through the lens, LCD and rear supports](../enclosure/freecad/LCD-mount-section.png)
+![Section through the lens, LCD and rear supports](../enclosure/freecad/support/visuals/LCD-mount-section.png)
 
 The target air gap is **2 mm** between LCD front and lens rear. Verify a positive
 gap without inserting a tool against the active display. Check side light/view,

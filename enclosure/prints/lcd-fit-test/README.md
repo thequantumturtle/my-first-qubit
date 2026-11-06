@@ -5,7 +5,7 @@ For the revised 1.60 mm PCB trial, use the complete
 hardware, pilot-test and assembly instructions. This directory remains historical.
 
 **Historical STL set: hold further printing pending dimensional review.**
-The [1.60 mm PCB revision](../../freecad/LCD-PCB160-review.md) changes the
+The [1.60 mm PCB revision](../../freecad/support/reviews/LCD-PCB160-review.md) changes the
 mounting stack and proposes smaller fasteners. These three STLs are preserved
 unchanged and do not represent that revision. Replacement exports require review.
 
@@ -26,8 +26,8 @@ the parts to fit the bed. No lens, LCD, fasteners, reference model, or enclosure
 is included in these meshes. Full numeric checks are in [validation.json](validation.json).
 
 Sources: [native fit test](../../freecad/MyFirstQubit_LCD_fit_test.FCStd),
-[dimensioned drawing](../../freecad/LCD-fit-test-dimensions.svg),
-[engineering review](../../freecad/LCD-mechanical-review.md), and
+[dimensioned drawing](../../freecad/support/visuals/LCD-fit-test-dimensions.svg),
+[engineering review](../../freecad/support/reviews/LCD-mechanical-review.md), and
 [illustrated assembly/checklist](../../../docs/lcd-fit-test-assembly.md).
 
 ## Starting print recommendations — not qualified manufacturing settings
@@ -140,7 +140,7 @@ using the [assembly checklist](../../../docs/lcd-fit-test-assembly.md#physical-f
 
 ## Re-exporting
 
-Run [export_lcd_fit_test.py](../../freecad/export_lcd_fit_test.py) inside FreeCAD.
+Run [export_lcd_fit_test.py](../../freecad/support/scripts/export_lcd_fit_test.py) inside FreeCAD.
 For MCP/Python console, set `MFQ_REPO_ROOT` to your checkout and execute the script
 with `exec(compile(path.read_text(), str(path), 'exec'))`. The exporter reopens the
 saved source, refuses a touched open source, exports only the three named solids,
