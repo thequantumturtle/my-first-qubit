@@ -37,17 +37,17 @@ or original design intent is asserted.
 
 ## Native documents and construction
 
-- [Revised component](../../hardware/models/gc9a01-meta-mcu/GC9A01_drawing_PCB160_provisional.FCStd)
-- [Revised enclosure assembly](MyFirstQubit_iteration03_LCD_PCB160.FCStd)
-- [Revised independent fit test](MyFirstQubit_LCD_fit_test_PCB160.FCStd)
-- [Construction and validation recipe](create_lcd_pcb160_revision.py)
-- [Shared-datum, fit-assembly and final reopen checks](validate_lcd_pcb160_revision.py)
-- [Geometry validation](LCD-PCB160-validation.json)
-- [Dimensioned stack comparison](LCD-PCB160-section-dimensions.svg)
-- [CAD cross-section](LCD-mount-section-PCB160.png)
-- [Exploded assembly](LCD-mount-exploded-PCB160.png)
-- [Installed assembly](LCD-mechanical-inside-PCB160.png)
-- [Fit assembly](LCD-fit-test-assembled-PCB160.png)
+- [Revised component](../../../../hardware/models/gc9a01-meta-mcu/GC9A01_drawing_PCB160_provisional.FCStd)
+- [Revised enclosure assembly](../../MyFirstQubit_iteration03_LCD_PCB160.FCStd)
+- [Revised independent fit test](../../MyFirstQubit_LCD_fit_test_PCB160.FCStd)
+- [Construction and validation recipe](../scripts/create_lcd_pcb160_revision.py)
+- [Shared-datum, fit-assembly and final reopen checks](../scripts/validate_lcd_pcb160_revision.py)
+- [Geometry validation](../validation/LCD-PCB160-validation.json)
+- [Dimensioned stack comparison](../visuals/LCD-PCB160-section-dimensions.svg)
+- [CAD cross-section](../visuals/LCD-mount-section-PCB160.png)
+- [Exploded assembly](../visuals/LCD-mount-exploded-PCB160.png)
+- [Installed assembly](../visuals/LCD-mechanical-inside-PCB160.png)
+- [Fit assembly](../visuals/LCD-fit-test-assembled-PCB160.png)
 
 The new component uses native cylinders/box/fuse/cut features controlled by
 `DrawingParameters`. Its outline is a provisional 38 mm circular board with

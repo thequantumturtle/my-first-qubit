@@ -7,13 +7,13 @@ device classically simulates a pure qubit; it is not quantum computing hardware.
 
 ## Deliverables and editable structure
 
-- [Native FreeCAD document](MyFirstQubit_enclosure_iteration03.FCStd)
-- [Complete front, top-down](iteration03-top.png)
-- [Complete front, axonometric](iteration03-axonometric.png)
-- [Protected LCD exploded detail](iteration03-lcd-exploded.png)
-- [Generation recipe](create_iteration03.py)
-- [All 55 pair clearances](iteration03-clearances.csv)
-- [Geometry validation and preserved file hashes](iteration03-validation.json)
+- [Native FreeCAD document](../../MyFirstQubit_enclosure_iteration03.FCStd)
+- [Complete front, top-down](../visuals/iteration03-top.png)
+- [Complete front, axonometric](../visuals/iteration03-axonometric.png)
+- [Protected LCD exploded detail](../visuals/iteration03-lcd-exploded.png)
+- [Generation recipe](../scripts/create_iteration03.py)
+- [All 55 pair clearances](../validation/iteration03-clearances.csv)
+- [Geometry validation and preserved file hashes](../validation/iteration03-validation.json)
 - [Measurements required before manufacture](iteration03-measurements.md)
 
 Iterations 01 and 02 were inspected through FreeCAD MCP. Their native files

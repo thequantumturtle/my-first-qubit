@@ -1,11 +1,11 @@
 # V0.4 provisional battery packaging
 
-Native proposal: [FreeCAD](MyFirstQubit_enclosure_v04_battery_proposal.FCStd).
-Views: [exterior](v04-battery-exterior.png),
-[underside with cover hidden](v04-battery-underside-open.png).
-[Recipe](create_v04_battery_proposal.py) and
-[validation results](v04-battery-validation.json) retain the design evidence.
-See [power requirements](../power-v04.md) for electrical gates and pending data.
+Native proposal: [FreeCAD](../../MyFirstQubit_enclosure_v04_battery_proposal.FCStd).
+Views: [exterior](../visuals/v04-battery-exterior.png),
+[underside with cover hidden](../visuals/v04-battery-underside-open.png).
+[Recipe](../scripts/create_v04_battery_proposal.py) and
+[validation results](../validation/v04-battery-validation.json) retain the design evidence.
+See [power requirements](../../../power-v04.md) for electrical gates and pending data.
 
 This clones iteration 03; iterations 01-03 are checksum-preserved. The front,
 all seven buttons, both encoders, displays and existing electronics are retained.
