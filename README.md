@@ -6,6 +6,10 @@ Montessori-inspired single-qubit physical learning board by **The Quantum Turtle
 
 The hardware-tested firmware is [commit e2de521](https://github.com/thequantumturtle/my-first-qubit/tree/e2de5214d59280a63d16a32949b4c171785ba0e4). Its [ESP32 compilation passed](https://github.com/thequantumturtle/my-first-qubit/actions/runs/39188301749). See the [milestone record](docs/milestones/2026-10-18-breadboard.md) for tested behavior and remaining work.
 
+## CAD and 3D printing
+
+The [enclosure guide](enclosure/README.md) is the starting point for the latest editable FreeCAD designs and small print-tested-in-CAD fit-test STL packages. The [Iteration 03 controls assembly](enclosure/freecad/MyFirstQubit_iteration03_controls_prototype.FCStd) and [main housing design](enclosure/freecad/MyFirstQubit_enclosure_iteration03.FCStd) are **engineering CAD prototypes**, not fully validated, print-ready working enclosures. The [encoder/knob fit-test package](enclosure/prints/encoder-knob-fit-test/README.md) and [PCB160 LCD fit-test package](enclosure/prints/lcd-fit-test-pcb160/README.md) include exported STLs.
+
 ## Quick start
 
 1. See [wiring](hardware/wiring.md) and disconnect USB before changing wires.
